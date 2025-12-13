@@ -1,0 +1,72 @@
+// Settings that influence how windows are positioned and sized.
+layout {
+    // Set gaps around windows in logical pixels.
+    gaps 10
+
+    // When to center a column when changing focus, options are:
+    // - "never", default behavior, focusing an off-screen column will keep at the left
+    //   or right edge of the screen.
+    // - "always", the focused column will always be centered.
+    // - "on-overflow", focusing a column will center it if it doesn't fit
+    //   together with the previously focused column.
+    center-focused-column "never"
+
+    // You can customize the widths that "switch-preset-column-width" toggles between.
+    preset-column-widths {
+        // Proportion sets the width as a fraction of the output width, taking gaps into account.
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
+
+    // You can also customize the heights that "switch-preset-window-height" (Mod+Shift+R) toggles between.
+    preset-window-heights {
+        proportion 0.25
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 0.75
+        proportion 1.0
+    }
+
+    // Default width for new windows.
+    default-column-width { proportion 1.0; }
+
+    // You can change how the focus ring looks.
+    focus-ring {
+        // Uncomment this line to disable the focus ring.
+        // off
+
+        // Thin borders.
+        width 1
+
+        // Color of the ring on the active monitor.
+        active-color "#1bfd9c"
+
+        // Color of the ring on inactive monitors.
+        inactive-color "#101010"
+    }
+
+    border {
+        // Disable any fixed border.
+        off
+    }
+}
+
+// Omit their client-side decorations if possible.
+// If the client will specifically ask for CSD, the request will be honored.
+// Additionally, clients will be informed that they are tiled, removing some client-side rounded corners.
+// This option will also fix border/focus ring drawing behind some semitransparent windows.
+// After enabling or disabling this, you need to restart the apps or the entire compositor for this to take effect.
+prefer-no-csd
+
+// Animation settings.
+animations {
+}
+
+// Enable rounded corners for all windows.
+window-rule {
+    geometry-corner-radius 6
+    clip-to-geometry true
+}

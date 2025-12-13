@@ -85,4 +85,3 @@ hi! link WinBar StatusLine
 hi! link WinBarNC StatusLineNC
 hi! link WindowPickerWinBar WindowPickerStatusLine
 hi! link WindowPickerWinBarNC WindowPickerStatusLineNC
-

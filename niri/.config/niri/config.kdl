@@ -1,0 +1,25 @@
+// "/-" comments out an entire section.
+
+workspace "browser"
+workspace "chat"
+workspace "dev"
+workspace "notes"
+
+include "devices.kdl"
+
+hotkey-overlay {
+    // Disable the "Important Hotkeys" pop-up at startup.
+    skip-at-startup
+}
+
+// Theme and animation configuration.
+include "theme.kdl"
+
+// Window rule configuration.
+include "rules.kdl"
+
+// Key binding configuration.
+include "keybinds.kdl"
+
+// Program auto starting configutaion.
+include "autostart.kdl"

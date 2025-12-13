@@ -1,0 +1,11 @@
+// Add lines like this to spawn processes at startup.
+// Note that running niri as a session supports xdg-desktop-autostart,
+// which may be more convenient to use.
+// See the binds section below for more spawn examples.
+
+// Daemons
+spawn-sh-at-startup "swaybg -i ~/pics/wallpapers/foglet_harbor.jpg"
+
+// Applications
+spawn-at-startup "footclient"
+spawn-at-startup "obsidian"

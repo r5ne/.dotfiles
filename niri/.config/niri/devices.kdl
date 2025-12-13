@@ -1,0 +1,30 @@
+input {
+    keyboard {
+        repeat-rate 35
+        repeat-delay 300
+        // Set numlock on by default.
+        numlock
+    }
+
+    // Focus windows and outputs automatically when moving the mouse into them.
+    focus-follows-mouse
+}
+
+// You can configure outputs by their name, which you can find
+// by running `niri msg outputs` while inside a niri instance.
+// The built-in laptop monitor is usually called "eDP-1".
+// The monitors of a pc are usually called "DP-1..." depending on the number of monitors.
+output "DP-1" {
+    // Resolution and, optionally, refresh rate of the output.
+    // The format is "<width>x<height>" or "<width>x<height>@<refresh rate>".
+    // If the refresh rate is omitted, niri will pick the highest refresh rate
+    // for the resolution.
+    // If the mode is omitted altogether or is invalid, niri will pick one automatically.
+    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+    mode "2560x1440"
+    position x=0 y=0
+
+    // You can use integer or fractional scale, for example use 1.5 for 150% scale.
+    // Set to a integer scale for the best compatilibity with programs.
+    scale 1
+}
