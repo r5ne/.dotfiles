@@ -1,15 +1,3 @@
-input {
-    keyboard {
-        repeat-rate 35
-        repeat-delay 300
-        // Set numlock on by default.
-        numlock
-    }
-
-    // Focus windows and outputs automatically when moving the mouse into them.
-    focus-follows-mouse
-}
-
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
 // The built-in laptop monitor is usually called "eDP-1".

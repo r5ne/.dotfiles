@@ -1,0 +1,11 @@
+input {
+    keyboard {
+        repeat-rate 35
+        repeat-delay 300
+        // Set numlock on by default.
+        numlock
+    }
+
+    // Focus windows and outputs automatically when moving the mouse into them.
+    focus-follows-mouse
+}

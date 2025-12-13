@@ -6,6 +6,7 @@ workspace "dev"
 workspace "notes"
 
 include "devices.kdl"
+include "monitors.kdl"
 
 hotkey-overlay {
     // Disable the "Important Hotkeys" pop-up at startup.
