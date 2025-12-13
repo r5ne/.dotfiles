@@ -1,0 +1,54 @@
+# -*- conf -*-
+# Ported over by r5ne
+# Original theme by wnkz
+
+[colors]
+# background opacity
+alpha=0.75
+
+background=1c1c1c
+foreground=c0c0c0
+
+# black
+regular0=303030
+bright0=4d4d4d
+
+# red
+regular1=deeeed
+bright1=708090
+
+# green
+regular2=1bfd9c
+bright2=a6ffc9
+
+# yellow
+regular3=bababa
+bright3=e1e1e1
+
+# blue
+regular4=a1a1a1
+bright4=b1b1b1
+
+# magenta
+regular5=66b2b2
+bright5=49c4c4
+
+# cyan
+regular6=d1d1d1
+bright6=d7d7d7
+
+# white
+regular7=f1f1f1
+bright7=ffffff
+
+# background color, main color
+cursor=1c1c1c c0c0c0
+
+selection-background=313131
+selection-foreground=e1e1e1
+
+search-box-no-match=c0c0c0 deeeed
+search-box-match=e1e1e1 313131
+
+jump-labels=c0c0c0 a1a1a1
+urls=708090
