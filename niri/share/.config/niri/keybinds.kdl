@@ -172,4 +172,6 @@ binds {
     Mod+Shift+B hotkey-overlay-title="Open a Browser: Firefox" { spawn "firefox"; }
     // Discord.
     Mod+Shift+D hotkey-overlay-title="Open a Messaging App: Discord" { spawn "discord"; }
+    // Notetaking
+    Mod+Shift+N hotkey-overlay-title="Open a Notetaking App: Obsidian" { spawn "obsidian --enable-features=UseOzonePlatform --ozone-platform-hint=auto"; }
 }
