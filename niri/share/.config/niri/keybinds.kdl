@@ -173,5 +173,5 @@ binds {
     // Discord.
     Mod+Shift+D hotkey-overlay-title="Open a Messaging App: Discord" { spawn "discord"; }
     // Notetaking
-    Mod+Shift+N hotkey-overlay-title="Open a Notetaking App: Obsidian" { spawn "obsidian --enable-features=UseOzonePlatform --ozone-platform-hint=auto"; }
+    Mod+Shift+N hotkey-overlay-title="Open a Notetaking App: Obsidian" { spawn-sh "obsidian --enable-features=UseOzonePlatform --ozone-platform-hint=auto"; }
 }
