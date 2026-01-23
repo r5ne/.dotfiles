@@ -16,6 +16,11 @@ hotkey-overlay {
     skip-at-startup
 }
 
+// Fix for electron-based applications running electron >28.
+environment {
+      XDG_SESSION_TYPE "wayland"
+}
+
 // Theme and animation configuration.
 include "theme.kdl"
 
