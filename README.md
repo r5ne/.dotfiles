@@ -12,5 +12,5 @@ jobless dotfiles for a jobless CS major
 - A new directory for each modular dotfiles I will want to use (usually translates to one program)
 - Packages with -deps in the name shouldn't be stowed unless another package explicitly requires it - read the README.md for info on package dependencies.
 ## Credits
-- [monoglow.nvim](github.com/wnkz/monoglow.nvim) - for the colorscheme used by most of my dots
+- [monoglow.nvim](https://github.com/wnkz/monoglow.nvim) - for the colorscheme used by most of my dots
 - [gnu stow](https://www.gnu.org/software/stow/) - for the best modular dotfile manager
