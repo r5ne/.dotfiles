@@ -5,14 +5,8 @@ workspace "chat"
 workspace "dev"
 workspace "notes"
 
-// I/O device configuration.
-include "devices.kdl"
-
-// Monitor mode and layout configuration.
-include "monitors.kdl"
-
+// Disable the "Important Hotkeys" pop-up at startup.
 hotkey-overlay {
-    // Disable the "Important Hotkeys" pop-up at startup.
     skip-at-startup
 }
 
@@ -20,6 +14,15 @@ hotkey-overlay {
 environment {
       XDG_SESSION_TYPE "wayland"
 }
+
+// Screenshot path and name.
+screenshot-path "~/pics/screenshots/%F-%H-%M-%S.png"
+
+// I/O device configuration.
+include "devices.kdl"
+
+// Monitor mode and layout configuration.
+include "monitors.kdl"
 
 // Theme and animation configuration.
 include "theme.kdl"
