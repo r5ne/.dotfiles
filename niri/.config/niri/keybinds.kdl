@@ -143,9 +143,13 @@ binds {
     // Mod+Space       { switch-layout "next"; }
     // Mod+Shift+Space { switch-layout "prev"; }
 
+    // Screenshot keybinds
+    // Shift modifier when used with screen and window screenshots copies to clipboard instead of saving.
     Print { screenshot; }
     Ctrl+Print { screenshot-screen; }
+    Ctrl+Shift+Print { spawn-sh "niri msg action screenshot-screen --write-to-disk=false"; }
     Mod+Print { screenshot-window; }
+    Mod+Shift+Print { spawn-sh "niri msg action screenshot-window --write-to-disk=false"; }
 
     // Applications such as remote-desktop clients and software KVM switches may
     // request that niri stops processing the keyboard shortcuts defined here
