@@ -1,5 +1,4 @@
 # Dependencies
----
-- JetBrainsMonoNF.ttf
-- `./foot/share`
-- `./foot/[monitor-resolution]`
+- Iosevka font family
+## Other dotfiles
+- foot-deps-[monitor resolution]
