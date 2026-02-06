@@ -23,12 +23,12 @@ power $(echo -e 'shutdown\nreboot\nsuspend\nhibernate' | fzf --reverse --padding
 [[modules]]
 description = "Application Picker"
 prefix = "app"
-cmd = "fsel"
+cmd = "fsel --detach"
 
 [[modules]]
 description = "Wifi Managment"
 prefix = "wifi"
-cmd = "foot --app-id=otter-launcher --window-size-pixels=2540x1420 --override=colors.alpha=0.9 impala"
+cmd = "footclient --app-id=otter-launcher --window-size-pixels=2540x1420 --override=colors.alpha=0.9 impala"
 unbind_proc = true
 
 [[modules]]
