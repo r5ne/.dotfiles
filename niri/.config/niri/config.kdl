@@ -16,7 +16,7 @@ environment {
 }
 
 // Screenshot path and name.
-screenshot-path "~/pics/screenshots/%F-%H-%M-%S.png"
+screenshot-path "~/pictures/screenshots/%F-%H-%M-%S.png"
 
 // I/O device configuration.
 include "devices.kdl"
