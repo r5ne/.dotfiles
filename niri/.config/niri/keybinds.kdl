@@ -175,6 +175,8 @@ binds {
     // Color picker tool, output in rgb.
     // Mod+Shift+Home hotkey-overlay-title="Open an rgb Color Picker: hyprpicker" { spawn-sh "hyprpicker -af rgb"; }
 
+    Mod+Shift+Delete { spawn-sh "systemctl poweroff"; }
+
     // Screenshot keybinds
     // Shift modifier when used with screen and window screenshots copies to clipboard instead of saving.
     Print { screenshot; }
