@@ -20,6 +20,7 @@ HISTSIZE=1000000
 SAVEHIST=1000000
 HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
 
+
 # keybinds
 bindkey "^a" beginning-of-line
 bindkey "^e" end-of-line
@@ -31,3 +32,13 @@ bindkey "^H" backward-kill-word
 
 bindkey "^J" history-search-forward
 bindkey "^K" history-search-backward
+
+# set up prompt
+autoload -Uz vcs_info
+precmd() { vcs_info } # load the vcs_info_msg_0_ env var (executed before each prompt)
+setopt prompt_subst # allow expanding environment variables in the prompt
+zstyle ':vcs_info:git*' formats ' [%b]'
+# PROMPT='%~%f%F{yellow}${vcs_info_msg_0_}%f%(?.%F{white} $%f.%F{red} $%f) '
+
+# syntax highlighting via zsh-patina
+eval "$(zsh-patina activate)"

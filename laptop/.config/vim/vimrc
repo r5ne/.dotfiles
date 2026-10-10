@@ -9,6 +9,9 @@ set relativenumber
 " disable wrapping when line is too long
 set nowrap
 
+" disable swapfiles
+set noswapfile
+
 " set default tabstop
 set tabstop=4
 set shiftwidth=4
@@ -30,4 +33,5 @@ nnoremap <leader>o :update<CR>:source $MYVIMRC<CR>:echom "Updated and sourced th
 nnoremap <leader>w :write<CR>
 nnoremap <leader>q :quit<CR>
 nnoremap <CR> o<Esc>
+" note that this won't work on a linux TTY as the difference between Shift + Enter and Enter is not detected
 nnoremap <S-CR> O<Esc>
