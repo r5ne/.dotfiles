@@ -1,8 +1,0 @@
-input {
-    keyboard {
-        repeat-rate 35
-        repeat-delay 300
-        // Set numlock on by default.
-        numlock
-    }
-}

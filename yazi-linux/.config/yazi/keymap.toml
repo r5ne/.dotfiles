@@ -1,9 +1,0 @@
-[[mgr.prepend_keymap]]
-on = "p"
-run = "plugin ucp paste notify"
-desc = "Paste"
-
-[[mgr.prepend_keymap]]
-on = "y"
-run = "plugin ucp copy notify"
-desc = "Copy"

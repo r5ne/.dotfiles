@@ -1,8 +1,0 @@
-# Disable any startup popups.
-disableStartupPopups: true
-
-# Allow using nerd fonts.
-nerdFontsVersion: "3"
-
-# When running lazygit outside of a repo open the most recent repo automatically.
-notARepository: skip
