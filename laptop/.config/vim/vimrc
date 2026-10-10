@@ -1,0 +1,33 @@
+" map leader key for custom commands
+let g:mapleader=" "
+let g:maplocalleader=" "
+
+" relative line numbers except on the current line
+set number
+set relativenumber
+
+" disable wrapping when line is too long
+set nowrap
+
+" set default tabstop
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
+" enable search highlighting
+set hlsearch
+
+" enable color scheme
+set termguicolors
+set t_Co=256
+colorscheme catppuccin
+
+" enable syntax highlighting
+syntax enable
+
+" keybinds
+nnoremap <leader>o :update<CR>:source $MYVIMRC<CR>:echom "Updated and sourced the vimrc at: " $MYVIMRC<CR>
+nnoremap <leader>w :write<CR>
+nnoremap <leader>q :quit<CR>
+nnoremap <CR> o<Esc>
+nnoremap <S-CR> O<Esc>

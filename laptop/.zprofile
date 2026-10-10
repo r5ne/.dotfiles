@@ -8,4 +8,5 @@ export XDG_CACHE_HOME="$HOME/.cache"
 # Bootstrap .zshrc to ~/.config/zsh/.zshrc
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
 
-# export PATH="$HOME/.local/bin:$PATH"
+# add local binaries to path
+export PATH="$HOME/.local/bin:$PATH"
