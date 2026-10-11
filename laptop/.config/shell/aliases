@@ -1,0 +1,18 @@
+# Default options
+alias \
+\
+mv="mv -i" \
+rm="rm -Iv" \
+ls="ls -h --color=auto --group-directories-first" \
+grep="grep --color=auto"
+
+# Custom commands
+alias \
+\
+la="ls -lah --color=auto --group-directories-first"
+
+# XDG compliancy fixes
+alias \
+\
+wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts" \
+alias adb='HOME="$XDG_DATA_HOME"/android adb'

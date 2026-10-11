@@ -1,5 +1,8 @@
 # read after ~/.zprofile
 
+# source aliases
+[ -f "$XDG_CONFIG_HOME/shell/aliases" ] && source "$XDG_CONFIG_HOME/shell/aliases"
+
 # load completion
 zmodload zsh/complist
 autoload -U compinit && compinit
