@@ -1,0 +1,10 @@
+[Unit]
+Description=Runs SNTP every hour
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSet=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target

@@ -29,7 +29,7 @@ export PYTHONCACHEPREFIX="$XDG_CACHE_HOME/python"
 export RUFF_CACHE_DIR="$XDG_CACHE_HOME/ruff"
 
 export _JAVA_OPTIONS="-Djava.util.prefs.userRoot=$XDG_CONFIG_HOME/java"
-export _JAVA_OPTIONS+=" -Djavafx.cachedir=$XDG_CACHE_HOME/openjfx"
+_JAVA_OPTIONS+=" -Djavafx.cachedir=$XDG_CACHE_HOME/openjfx"
 
 export CUDA_CACHE_PATH="$XDG_CACHE_HOME/nv"
 export DOTNET_CLI_HOME="$XDG_DATA_HOME/dotnet"
