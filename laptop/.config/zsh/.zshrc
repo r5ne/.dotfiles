@@ -37,11 +37,15 @@ HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
 
 # set up prompt
 autoload -Uz promptinit && promptinit
-autoload -Uz vcs_info
+# Add the pure prompt
+fpath+=("$ZDOTDIR/pure" "$fpath[@]")
+prompt pure
 
-precmd() { vcs_info } # load the vcs_info_msg_0_ env var (executed before each prompt)
-setopt prompt_subst # allow expanding environment variables in the prompt
-zstyle ':vcs_info:git*' formats ' [%b]'
+# autoload -Uz vcs_info
+
+# precmd() { vcs_info } # load the vcs_info_msg_0_ env var (executed before each prompt)
+# setopt prompt_subst # allow expanding environment variables in the prompt
+# zstyle ':vcs_info:git*' formats ' [%b]'
 # PROMPT='%~%f%F{yellow}${vcs_info_msg_0_}%f%(?.%F{white} $%f.%F{red} $%f) '
 
 # keybinds
