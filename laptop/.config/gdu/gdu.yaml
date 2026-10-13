@@ -1,0 +1,10 @@
+# Also shows the number of files/folders in a subdirectory
+show-item-count: false
+# Use GB instead of GiB
+use-si-prefix: true
+
+# Allows going above the folder level at which the scan was started
+browse-parent-dirs: false
+# Quicker and less-intrusive file deleting
+delete-in-background: false
+delete-in-parallel: false
