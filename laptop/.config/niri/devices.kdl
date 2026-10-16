@@ -1,0 +1,13 @@
+output "eDP-1" {
+    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
+    // mode "widthxheight@refresh"
+}
+
+input {
+    keyboard {
+        repeat-rate 35
+        repeat-delay 300
+        // Set numlock on by default.
+        numlock
+    }
+}
