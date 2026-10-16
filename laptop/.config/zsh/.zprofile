@@ -53,3 +53,6 @@ export VIMINIT='let $MYVIMRC = !has("nvim") ? "$XDG_CONFIG_HOME/vim/vimrc" : "$X
 
 export STARSHIP_CONFIG="$XDG_CONFIG_HOME/starship.toml"
 export STARSHIP_CACHE="$XDG_CACHE_HOME/starship"
+
+# Start the niri compositor on login on tty1
+[ -f "$XDG_CONFIG_HOME/shell/start-niri" ] && source "$XDG_CONFIG_HOME/shell/start-niri"

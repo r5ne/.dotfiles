@@ -36,13 +36,12 @@ SAVEHIST=1000000
 HISTFILE="$XDG_CACHE_HOME/zsh_history" # move histfile to cache
 
 # set up prompt
+fpath+=("$ZDOTDIR/pure") # must load prompt path before loading promptinit
 autoload -Uz promptinit && promptinit
-# Add the pure prompt
-fpath+=("$ZDOTDIR/pure" "$fpath[@]")
 prompt pure
 
+# old prompt
 # autoload -Uz vcs_info
-
 # precmd() { vcs_info } # load the vcs_info_msg_0_ env var (executed before each prompt)
 # setopt prompt_subst # allow expanding environment variables in the prompt
 # zstyle ':vcs_info:git*' formats ' [%b]'

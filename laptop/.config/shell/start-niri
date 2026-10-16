@@ -1,0 +1,4 @@
+if [ -z "$WAYLAND_DISPLAY" ] && [ "$(tty)" = "/dev/tty1" ]; then
+    # -l is needed when running from login shells e.g. .zprofile to avoid an infinite loop
+    exec niri-session -l
+fi
