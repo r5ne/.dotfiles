@@ -10,4 +10,19 @@ input {
         // Set numlock on by default.
         numlock
     }
+
+    touchpad {
+	// Disable trackpad acceleration
+	accel-profile "flat"
+	// Sensitivity
+	accel-speed 0.75
+    }
+
+    // Thinkpad red button
+    trackpoint {
+	// Disable trackpoint acceleration
+	accel-profile "flat"
+	// Sensitivity
+	accel-speed 0.25
+    }
 }

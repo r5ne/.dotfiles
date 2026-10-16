@@ -1,0 +1,4 @@
+window-rule {
+    match app-id="foot"
+    default-column-width { proportion 0.5; }
+}

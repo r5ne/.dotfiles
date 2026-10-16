@@ -1,6 +1,8 @@
 binds {
     // Shows a list of important hotkeys.
     Mod+Shift+Slash { show-hotkey-overlay; }
+    // Quit niri
+    Mod+Ctrl+E { quit; }
 
     // Volume keys mappings for PipeWire & WirePlumber.
     // "-l 1.0" limits the volume to 100%.
@@ -114,7 +116,6 @@ binds {
 
 // Disable all gestures
 gestures {
-    off
     hot-corners { off; }
 }
 

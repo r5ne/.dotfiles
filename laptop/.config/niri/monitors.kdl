@@ -1,0 +1,5 @@
+output "eDP-1" {
+    mode "1366x768@59.978"
+    position x=0 y=0
+    scale 1
+}

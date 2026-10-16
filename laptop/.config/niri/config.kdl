@@ -6,6 +6,7 @@ workspace "notes"
 // Disable the "Important Hotkeys" pop-up at startup.
 hotkey-overlay {
     skip-at-startup
+    hide-not-bound
 }
 
 // Fix for electron-based applications running electron >28.
@@ -15,6 +16,12 @@ environment {
 
 // Screenshot path and name.
 screenshot-path "~/pictures/screenshots/%F-%H-%M-%S.png"
+
+// Cursor size
+cursor {
+    xcursor-theme "breeze_cursors"
+    xcursor-size 32
+}
 
 // I/O device configuration.
 include optional=true "devices.kdl"
