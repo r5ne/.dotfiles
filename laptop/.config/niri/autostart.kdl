@@ -1,2 +1,5 @@
+// Restore last used color-scheme.
+spawn-sh-at-startup "wal -R"
+
 spawn-sh-at-startup "qutebrowser"
 spawn-sh-at-startup "obsidian"

@@ -27,11 +27,15 @@ cursor {
 include optional=true "devices.kdl"
 // Monitor mode and layout configuration.
 include optional=true "monitors.kdl"
-// Theme and animation configuration.
+// Layout, styling and animation configuration.
 include optional=true "theme.kdl"
+// Color configuration
+include optional=true "colors.kdl"
 // Window rule configuration.
 include optional=true "rules.kdl"
 // Key binding configuration.
 include "keybinds.kdl"
+// Application launching/software specific keybinds
+include optional=true "application-keybinds.kdl"
 // Program auto starting configutaion.
 include optional=true "autostart.kdl"

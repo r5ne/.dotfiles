@@ -17,7 +17,6 @@ if (( $#_comp_files )); then
     echo "Recaching completions."
     compinit
 else
-    echo "Loading cached completions. Run \`compinit\` manually to force recaching."
     compinit -C # skip recaching completion
 fi
 

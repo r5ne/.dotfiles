@@ -19,12 +19,15 @@ layout {
     // Default width for new windows.
     default-column-width { proportion 1.0; }
 
+    focus-ring {
+        width 1
+    }
+
     border {
         // Disable any fixed border.
         off
     }
 }
-
 
 // Omit their client-side decorations if possible.
 prefer-no-csd

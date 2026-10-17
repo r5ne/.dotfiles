@@ -1,6 +1,7 @@
 -- visual
 require('packages/mini-starter')
 require('packages/mini-clue')
+require('packages/oklch-color-picker')
 
 -- lsp
 require('packages/nvim-treesitter')
