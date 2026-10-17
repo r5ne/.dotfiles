@@ -1,16 +1,18 @@
 # Default options
 alias \
 \
-mv="mv -i" \
-rm="rm -Iv" \
-ls="ls -h --color=auto --group-directories-first" \
+mv="mv --interactive" \
+rm="rm --interactive=once --verbose" \
+ls="ls --human-readable --color=auto --group-directories-first" \
 grep="grep --color=auto" \
+free="free --human --total"
+smem="smem --totals --abbreviate"
 xdg-ninja="xdg-ninja --skip-unsupported"
 
 # Custom commands
 alias \
 \
-la="ls -lah --color=auto --group-directories-first"
+la="ls --human-readable --all -l --color=auto --group-directories-first"
 
 # XDG compliancy fixes
 alias \

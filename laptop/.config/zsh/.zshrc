@@ -63,5 +63,8 @@ bindkey "^K" history-search-backward
 # must be at the bottom of the file
 eval "$(zsh-patina activate)"
 
+# activate the mise development tool manager
+eval "$(mise activate zsh)"
+
 # Uncomment along with the line near the top of the file to profile shell startup time
 # zprof

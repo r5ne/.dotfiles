@@ -120,5 +120,5 @@ gestures {
 }
 
 // Application launching/software specific keybinds
-include optional=true "launch-keybinds.kdl"
+include optional=true "application-keybinds.kdl"
 

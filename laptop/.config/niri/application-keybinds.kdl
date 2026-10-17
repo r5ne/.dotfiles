@@ -1,5 +1,5 @@
 binds {
-    Mod+Shift+T hotkey-overlay-title="Open the terminal" { spawn "foot"; }
+    Mod+Shift+T hotkey-overlay-title="Open the terminal" { spawn "footclient"; }
     Mod+Shift+B hotkey-overlay-title="Open the browser" { spawn "firefox"; }
     Mod+Shift+N hotkey-overlay-title="Open the notes" { spawn-sh "obsidian --enable-features=UseOzonePlatform --ozone-platform-hint=auto"; }
 }
