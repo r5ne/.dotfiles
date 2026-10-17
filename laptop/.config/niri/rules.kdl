@@ -2,3 +2,13 @@ window-rule {
     match app-id="foot"
     default-column-width { proportion 0.5; }
 }
+
+window-rule {
+    match app-id="firefox"
+    match app-id="qutebrowser"
+    open-on-workspace "browser"
+}
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "notes"
+}

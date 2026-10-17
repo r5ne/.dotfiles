@@ -1,1 +1,2 @@
-
+spawn-sh-at-startup "qutebrowser"
+spawn-sh-at-startup "obsidian"

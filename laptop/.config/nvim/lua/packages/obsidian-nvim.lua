@@ -12,7 +12,7 @@ obsidian.setup({
     workspaces = {
         {
             name = 'nr5m',
-            path = '~/documents/obsidian-vaults/nr5m',
+            path = '~/documents/nr5m',
         },
     },
 
