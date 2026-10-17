@@ -1,0 +1,58 @@
+@import "colors.css";
+
+* {
+    color: @primary;
+
+    border: none;
+    border-radius: 0;
+
+    font-family: iosevka;
+    font-size: 12px;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+window#waybar > box {
+    border-radius: 8px;
+    margin: 0px 8px 6px 8px;
+    background-color: alpha(@background, 0.85);
+}
+
+#window {
+    margin: 0;
+    padding: 0;
+    padding-top: 0px;
+    font-size: 8px;
+}
+
+.modules-left {
+    margin-left: 8px;
+}
+
+.modules-center {
+    border-left: 1px solid alpha(@primary, 0.2);
+    border-right: 1px solid alpha(@primary, 0.2);
+    padding: 0 50px;
+}
+
+.modules-right {
+    margin-right: 8px;
+}
+
+#battery,
+#network,
+#cpu,
+#memory,
+#pulseaudio,
+#bluetooth,
+#disk,
+#wireplumber {
+    min-width: 2px;
+    margin: 0 7.5px;
+}
+
+#clock {
+    padding: 0 0;
+}

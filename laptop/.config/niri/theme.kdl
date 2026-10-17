@@ -1,4 +1,7 @@
 layout {
+    gaps 25
+    center-focused-column "never"
+
     // The widths that "switch-preset-column-width" toggles between.
     preset-column-widths {
         proportion 0.33333
@@ -35,4 +38,10 @@ prefer-no-csd
 animations {
     // Disable all animations for performance
     off
+}
+
+// Enable rounded corners for all windows.
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true
 }

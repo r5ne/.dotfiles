@@ -1,0 +1,76 @@
+{
+    // Bar style
+    "layer": "top", // Bar goes over the top of windows
+    "position": "top",
+
+    "spacing": 0, // Padding is added to individual modules
+    "width": 1161, // 0.85 of total width
+    "height": 32, // 0.04 of total height
+
+    "margin": "0 6px 0 6px",
+
+    // Module layout
+    "modules-left": [
+        "cpu",
+        "memory",
+        "disk",
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "wireplumber",
+        "network",
+        "battery",
+    ],
+    "cpu": {
+        "interval": 20,
+        "format": "{usage}% CPU usage",
+    },
+    "memory": {
+        "interval": 10,
+        "unit": "GB",
+        "format": "{used:0.1f} GB ({percentage}%) RAM usage",
+    },
+    "disk": {
+        "interval": 120,
+        "format": "{specific_used:<0.1f} GB ({percentage_used}%) used on {path}",
+        "unit": "GB",
+        "path": "/home/r5ne",
+    },
+    "battery": {
+        "format": "{capacity}% battery",
+        "format-charging": "{capacity}% charging",
+        "format-discharging": "{capacity}% discharging",
+        "format-full": "Fully charged",
+        "interval": 10,
+    },
+    "pulseaudio": {
+        "format": "{volume}% volume",
+        "format-muted": "Audio muted",
+        "on-click": "wiremix",
+    },
+    "wireplumber": {
+        "format": "{volume}% volume",
+        //"format": "{volume}% ({volume_db}dB) volume",
+        "tooltip-format": "Playing from {source_desc}",
+        "format-muted": "Audio muted",
+        "on-click": "wiremix",
+    },
+    "clock": {
+        "format": "{:L%A %H:%M}",
+        "tooltip-format": "<span>calendar</span>",
+        "calendar": {
+            "mode": "month",
+            "mode-mon-col": 3,
+        },
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%)", 
+        "format-disconnected": "Network disconnected",
+
+        "interval": 10,
+        "spacing": 1,
+        "on-click": "impala",
+    },
+}
