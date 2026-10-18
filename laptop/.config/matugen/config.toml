@@ -1,4 +1,5 @@
 [config]
+
 caching = true
 
 [config.wallpaper]
@@ -17,7 +18,7 @@ output_path = "~/.config/foot/colors.ini"
 [templates.tty]
 input_path = "~/.config/tty/tty-sequences-template"
 output_path = "~/.cache/matugen/tty-sequences"
-post_hook = "update-osc-sequences"
+post_hook = "update-osc-sequences --all"
 
 [templates.waybar]
 input_path = "~/.config/waybar/colors-template.css"
