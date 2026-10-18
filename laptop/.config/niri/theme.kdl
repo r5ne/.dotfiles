@@ -1,5 +1,5 @@
 layout {
-    gaps 25
+    gaps 15
     center-focused-column "never"
 
     // The widths that "switch-preset-column-width" toggles between.

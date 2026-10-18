@@ -1,8 +1,3 @@
-output "eDP-1" {
-    // Run `niri msg outputs` while inside a niri instance to list all outputs and their modes.
-    // mode "widthxheight@refresh"
-}
-
 input {
     keyboard {
         repeat-rate 35
@@ -12,17 +7,17 @@ input {
     }
 
     touchpad {
-	// Disable trackpad acceleration
-	accel-profile "flat"
-	// Sensitivity
-	accel-speed 0.75
+        // Disable trackpad acceleration
+        accel-profile "flat"
+        // Sensitivity
+        accel-speed 0.75
     }
 
     // Thinkpad red button
     trackpoint {
-	// Disable trackpoint acceleration
-	accel-profile "flat"
-	// Sensitivity
-	accel-speed 0.25
+        // Disable trackpoint acceleration
+        accel-profile "flat"
+        // Sensitivity
+        accel-speed 0.25
     }
 }

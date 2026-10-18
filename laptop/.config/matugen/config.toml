@@ -1,0 +1,25 @@
+[config]
+caching = true
+
+[config.wallpaper]
+set = true
+pre_hook = "pkill swaybg"
+command = "swaybg --mode fill --image {{ image }} > /dev/null 2>&1 &"
+
+[templates.niri]
+input_path = "~/.config/niri/colors-template.kdl"
+output_path = "~/.config/niri/colors.kdl"
+
+[templates.foot]
+input_path = "~/.config/foot/colors-template.ini"
+output_path = "~/.config/foot/colors.ini"
+
+[templates.tty]
+input_path = "~/.config/tty/tty-sequences-template"
+output_path = "~/.cache/matugen/tty-sequences"
+post_hook = "update-osc-sequences"
+
+[templates.waybar]
+input_path = "~/.config/waybar/colors-template.css"
+output_path = "~/.config/waybar/colors.css"
+post_hook = "killall -SIGUSR2 waybar"

@@ -39,6 +39,12 @@ fpath+=("$ZDOTDIR/pure") # must load prompt path before loading promptinit
 autoload -Uz promptinit && promptinit
 prompt pure
 
+# Apply OSC sequences (live terminal update colors) in case scheme was changed
+update-osc-sequences
+
+# activate the mise development tool manager
+eval "$(mise activate zsh)"
+
 # old prompt
 # autoload -Uz vcs_info
 # precmd() { vcs_info } # load the vcs_info_msg_0_ env var (executed before each prompt)
@@ -61,9 +67,6 @@ bindkey "^K" history-search-backward
 # syntax highlighting via zsh-patina
 # must be at the bottom of the file
 eval "$(zsh-patina activate)"
-
-# activate the mise development tool manager
-eval "$(mise activate zsh)"
 
 # Uncomment along with the line near the top of the file to profile shell startup time
 # zprof

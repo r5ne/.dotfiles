@@ -9,6 +9,7 @@ settings:
   auto_save.session:
     global: true
   content.javascript.clipboard:
+    https://gemini.google.com: access-paste
     https://github.com: access-paste
   downloads.location.directory:
     global: ~/downloads

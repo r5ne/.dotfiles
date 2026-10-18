@@ -1,0 +1,33 @@
+#!/bin/sh
+
+WALLPAPER_DIR="$HOME/pictures/wallpapers"
+# Also change in ~/.config/niri/autostart.kdl
+WALLPAPER_CACHE_DIR="$XDG_CACHE_HOME/current_wallpaper"
+
+# Use the passed image argument, or pick a random wallpaper
+IMAGE="${1:-$(ls "$WALLPAPER_DIR" | shuf -n 1)}"
+IMAGE_PATH="${WALLPAPER_DIR%/}/$IMAGE"
+
+# Exit if no wallpapers in $WALLPAPER_DIR
+if [ ! -f "$IMAGE_PATH" ]; then
+    echo "Error: No parameter passed or no random image could be selected from $WALLPAPER_DIR"
+    exit 1
+fi
+
+echo "Using image path: $IMAGE_PATH"
+
+# Matugen constants
+MATUGEN_METHOD="dark"
+MATUGEN_SCHEME="scheme-smart"
+CONTRAST=0
+
+# Cache the current wallpaper for future boots
+echo "Caching image to $WALLPAPER_CACHE_DIR"
+ln --symbolic --force --verbose "$IMAGE_PATH" "$WALLPAPER_CACHE_DIR"
+
+# Kill swaybg if running interactively
+pkill swaybg
+echo "Restarting swaybg with new wallpaper..."
+swaybg --mode fill --image "$WALLPAPER_CACHE_DIR" > /dev/null 2>&1 &
+echo "Set new background from cache: $WALLPAPER_CACHE_DIR"
+matugen image "$IMAGE_PATH" -m "$MATUGEN_METHOD" --type "$MATUGEN_SCHEME" --contrast "$CONTRAST" --verbose
