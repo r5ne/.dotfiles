@@ -1,33 +1,80 @@
 #!/bin/sh
 
-WALLPAPER_DIR="$HOME/pictures/wallpapers"
+# Requires xdg-user-dirs
+PICTURES_DIR="$(xdg-user-dir PICTURES)"
+# Default to ~/pictures/wallpapers if no xdg-user-dirs
+WALLPAPER_DIR="${PICTURES_DIR:-$HOME/pictures}/wallpapers"
 # Also change in ~/.config/niri/autostart.kdl
-WALLPAPER_CACHE_DIR="$XDG_CACHE_HOME/current_wallpaper"
+WALLPAPER_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/current_wallpaper"
 
-# Use the passed image argument, or pick a random wallpaper
-IMAGE="${1:-$(ls "$WALLPAPER_DIR" | shuf -n 1)}"
-IMAGE_PATH="${WALLPAPER_DIR%/}/$IMAGE"
+# Script states
+TARGET=""
+DRY_RUN=0
 
-# Exit if no wallpapers in $WALLPAPER_DIR
-if [ ! -f "$IMAGE_PATH" ]; then
-    echo "Error: No parameter passed or no random image could be selected from $WALLPAPER_DIR"
-    exit 1
-fi
-
-echo "Using image path: $IMAGE_PATH"
-
-# Matugen constants
+# Matugen options
 MATUGEN_METHOD="dark"
 MATUGEN_SCHEME="scheme-smart"
 CONTRAST=0
 
-# Cache the current wallpaper for future boots
-echo "Caching image to $WALLPAPER_CACHE_DIR"
-ln --symbolic --force --verbose "$IMAGE_PATH" "$WALLPAPER_CACHE_DIR"
+# Parse arguments
+while [ $# -gt 0 ]; do
+    case "$1" in
+        -s|--scheme) MATUGEN_SCHEME="$2"; shift 2 ;;
+        -d|--dry-run) DRY_RUN=1; shift ;;
+        -r|--recursive) RECURSIVE=1; shift ;;
+        -*)
+            echo "Error: Unknown option '$1'"
+            echo "Usage: $0 [-s|--scheme SCHEME] [-d|--dry-run] [IMAGE_FILENAME|IMAGE_SUBDIRECTORY]"
+            exit 1
+            ;;
+        *)
+            # If it doesn't start with '-', treat it as the positional image argument
+            if [ -z "$TARGET" ]; then
+                TARGET="$1"
+            else
+                echo "Error: Too many positional arguments ('$IMAGE' and '$1')."
+                exit 1
+            fi
+            shift ;;
+    esac
+done
 
-# Kill swaybg if running interactively
-pkill swaybg
-echo "Restarting swaybg with new wallpaper..."
-swaybg --mode fill --image "$WALLPAPER_CACHE_DIR" > /dev/null 2>&1 &
-echo "Set new background from cache: $WALLPAPER_CACHE_DIR"
-matugen image "$IMAGE_PATH" -m "$MATUGEN_METHOD" --type "$MATUGEN_SCHEME" --contrast "$CONTRAST" --verbose
+# Set the target to the wallpaper directory if no other direcotry provided
+[ -z "$TARGET" ] && TARGET="$WALLPAPER_DIR"
+
+# Fallback to random image if no positional argument was provided
+if [ -d "$TARGET" ]; then
+    if [ "$RECURSIVE" -eq 1 ]; then
+        IMAGE_PATH=$(fd . "$TARGET" --type file | shuf --head-count 1)
+    else
+        IMAGE_PATH=$(fd . "$TARGET" --max-depth 1 --type file | shuf --head-count 1)
+    fi
+
+    if [ -z "$IMAGE_PATH" ]; then
+        echo "Error No valid images found in $TARGET."
+        exit 1
+    fi
+
+elif [ -f "$TARGET" ]; then
+    IMAGE_PATH="$TARGET"
+else
+    echo "Error: '$TARGET' is not a valid file or directory."
+    exit 1
+fi
+
+echo "Using image path: $IMAGE_PATH"
+echo "Matugen scheme: $MATUGEN_SCHEME"
+
+# Handle Dry Run vs Normal Execution
+if [ "$DRY_RUN" -eq 1 ]; then
+    echo "Dry run: wallpaper caching and swaybg restart skipped."
+    matugen image "$IMAGE_PATH" -m "$MATUGEN_METHOD" --config /dev/null --type "$MATUGEN_SCHEME" --contrast "$CONTRAST" --verbose --dry-run --show-colors
+else
+    # Cache the current wallpaper for future boots
+    echo "Caching image to $WALLPAPER_CACHE_DIR"
+    # Ensure the cache directory exists before symlinking
+    mkdir -p "$(dirname "$WALLPAPER_CACHE_DIR")"
+    ln --symbolic --force --verbose "$IMAGE_PATH" "$WALLPAPER_CACHE_DIR"
+
+    matugen image "$IMAGE_PATH" -m "$MATUGEN_METHOD" --type "$MATUGEN_SCHEME" --contrast "$CONTRAST" --verbose
+fi

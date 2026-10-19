@@ -1,7 +1,7 @@
 // desktop utils
 spawn-sh-at-startup "waybar"
 // Also change in ~/.local/bin/set-wallpaper
-spawn-sh-at-startup r#"swaybg --mode fill --image "~/.cache/current_wallpaper"#
+spawn-sh-at-startup r#"swaybg --mode fill --image '/home/r5ne/.cache/current_wallpaper'"#
 
 // applications
 spawn-sh-at-startup "qutebrowser"

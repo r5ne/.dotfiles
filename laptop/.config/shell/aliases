@@ -5,6 +5,7 @@ mv="mv --interactive" \
 rm="rm --interactive=once --verbose" \
 ls="ls --human-readable --color=auto --group-directories-first" \
 grep="grep --color=auto" \
+tree="tree -C --dirsfirst" \
 free="free --human --total" \
 smem="smem --totals --abbreviate" \
 xdg-ninja="xdg-ninja --skip-unsupported"

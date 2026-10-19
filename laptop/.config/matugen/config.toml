@@ -1,11 +1,10 @@
 [config]
-
 caching = true
 
 [config.wallpaper]
 set = true
 pre_hook = "pkill swaybg"
-command = "swaybg --mode fill --image {{ image }} > /dev/null 2>&1 &"
+command = "swaybg --mode fill --image '{{ image }}' > /dev/null 2>&1 &"
 
 [templates.niri]
 input_path = "~/.config/niri/colors-template.kdl"
