@@ -1,0 +1,38 @@
+# Default options
+alias \
+\
+mv="mv --interactive" \
+rm="rm --interactive=once --verbose" \
+ls="ls --human-readable --color=auto --group-directories-first" \
+grep="grep --color=auto" \
+tree="tree -C --dirsfirst" \
+free="free --human --total" \
+smem="smem --totals --abbreviate" \
+xdg-ninja="xdg-ninja --skip-unsupported"
+
+# Custom commands
+alias \
+\
+la="ls --human-readable --all -l --color=auto --group-directories-first"
+
+# XDG compliancy fixes
+alias \
+\
+wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts" \
+alias adb='HOME="$XDG_DATA_HOME"/android adb'
+
+# Custom functions
+
+# Benchmark
+timezsh() {
+    shell=${1-$SHELL}
+    for i in $(seq 1 10); do time $shell -i -c exit; done
+}
+
+function y() {
+	local tmp cwd; tmp="$(mktemp -t "yazi-cwd.XXXXXX")"
+	command yazi "$@" --cwd-file="$tmp"
+	IFS= read -r -d '' cwd < "$tmp"
+	[ "$cwd" != "$PWD" ] && [ -d "$cwd" ] && builtin cd -- "$cwd" || builtin true
+	command rm -f -- "$tmp"
+}
