@@ -1,0 +1,13 @@
+return {
+    remapped_kb = {
+        -- Add any playing remaps here
+        ["MB5"] = "F3",
+
+    },
+
+    normal_kb = {
+        -- Add any remaps you want to keep when disabling normal remaps (not necessary)
+
+    },
+
+}
