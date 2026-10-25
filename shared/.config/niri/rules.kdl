@@ -1,0 +1,27 @@
+// Window size rules
+window-rule {
+    match app-id="foot"
+    default-column-width { proportion 0.5; }
+}
+
+// Window workspace restrictions
+window-rule {
+    match app-id="firefox"
+    match app-id="qutebrowser"
+    match app-id="librewolf"
+    open-on-workspace "browser"
+}
+window-rule {
+    match app-id="obsidian"
+    open-on-workspace "notes"
+}
+window-rule {
+    match app-id="discord"
+    open-on-workspace "chat"
+}
+
+// Don't have windows spawned at startup change workspace
+window-rule {
+    match at-startup=true
+    open-focused false
+}

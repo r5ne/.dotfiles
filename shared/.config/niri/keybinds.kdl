@@ -1,0 +1,124 @@
+binds {
+    // Shows a list of important hotkeys.
+    Mod+Shift+Slash { show-hotkey-overlay; }
+    // Quit niri
+    Mod+Ctrl+E { quit; }
+
+    // Volume keys mappings for PipeWire & WirePlumber.
+    // "-l 1.0" limits the volume to 100%.
+    XF86AudioRaiseVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02+ -l 1.0"; }
+    XF86AudioLowerVolume allow-when-locked=true { spawn-sh "wpctl set-volume @DEFAULT_AUDIO_SINK@ 0.02-"; }
+    XF86AudioMute        allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"; }
+    XF86AudioMicMute     allow-when-locked=true { spawn-sh "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"; }
+
+    // Media keys
+    XF86AudioPlay allow-when-locked=true { spawn-sh "playerctl play-pause"; }
+    XF86AudioStop allow-when-locked=true { spawn-sh "playerctl stop"; }
+    XF86AudioPrev allow-when-locked=true { spawn-sh "playerctl previous"; }
+    XF86AudioNext allow-when-locked=true { spawn-sh "playerctl next"; }
+
+    // Closing windows
+    Mod+Q repeat=false { close-window; }
+
+    // Focusing windows
+    Mod+H     { focus-column-left; }
+    Mod+J     { focus-window-down; }
+    Mod+K     { focus-window-up; }
+    Mod+L     { focus-column-right; }
+    Mod+B { focus-column-first; }
+    Mod+E { focus-column-last; }
+    Mod+Period { focus-column-right; }
+    Mod+Comma  { focus-column-left; }
+
+    // Moving windows between workspaces
+    Mod+Shift+H     { move-column-left; }
+    Mod+Shift+J     { move-window-down; }
+    Mod+Shift+K     { move-window-up; }
+    Mod+Shift+L     { move-column-right; }
+
+    // Moving windows inside workspaces
+    Mod+Shift+Home { move-column-to-first; }
+    Mod+Shift+End  { move-column-to-last; }
+
+    // Moving workspaces
+    Mod+D { move-workspace-down; }
+    Mod+U { move-workspace-up; }
+    Mod+Ctrl+WheelScrollDown cooldown-ms=150 { move-column-to-workspace-down; }
+    Mod+Ctrl+WheelScrollUp   cooldown-ms=150 { move-column-to-workspace-up; }
+    Mod+Ctrl+Period { move-column-right; }
+    Mod+Ctrl+Comma  { move-column-left; }
+
+    // Usually scrolling up and down with Shift in applications results in
+    // horizontal scrolling; these binds replicate that.
+    Mod+Shift+WheelScrollDown      { focus-column-right; }
+    Mod+Shift+WheelScrollUp        { focus-column-left; }
+    Mod+Ctrl+Shift+WheelScrollDown { move-column-right; }
+    Mod+Ctrl+Shift+WheelScrollUp   { move-column-left; }
+
+    // Moving between workspaces.
+    Mod+O repeat=false { toggle-overview; }
+    Mod+1 { focus-workspace 1; }
+    Mod+2 { focus-workspace 2; }
+    Mod+3 { focus-workspace 3; }
+    Mod+4 { focus-workspace 4; }
+    Mod+z { focus-workspace 5; }
+    Mod+x { focus-workspace 6; }
+    Mod+c { focus-workspace 7; }
+    Mod+v { focus-workspace 8; }
+    Mod+Grave { focus-workspace 9; }
+    Mod+WheelScrollDown      cooldown-ms=150 { focus-workspace-down; }
+    Mod+WheelScrollUp        cooldown-ms=150 { focus-workspace-up; }
+
+    Mod+Shift+1 { move-column-to-workspace 1; }
+    Mod+Shift+2 { move-column-to-workspace 2; }
+    Mod+Shift+3 { move-column-to-workspace 3; }
+    Mod+Shift+4 { move-column-to-workspace 4; }
+    Mod+Shift+z { move-column-to-workspace 5; }
+    Mod+Shift+x { move-column-to-workspace 6; }
+    Mod+Shift+c { move-column-to-workspace 7; }
+    Mod+Shift+v { move-column-to-workspace 8; }
+    Mod+Shift+Grave { move-column-to-workspace 9; }
+
+    Mod+BracketLeft  { consume-or-expel-window-left; }
+    Mod+BracketRight { consume-or-expel-window-right; }
+
+    // Window size
+    Mod+R { switch-preset-column-width; }
+    Mod+Shift+R { switch-preset-window-height; }
+    Mod+Ctrl+R { reset-window-height; }
+    Mod+F11 { maximize-column; }
+    Mod+Shift+F11 { fullscreen-window; }
+    Mod+Ctrl+F11 { expand-column-to-available-width; }
+    Mod+Ctrl+C { center-visible-columns; }
+
+    // Move the focused window between the floating and the tiling layout.
+    Mod+F       { toggle-window-floating; }
+    Mod+Shift+F { switch-focus-between-floating-and-tiling; }
+
+    Mod+W { toggle-column-tabbed-display; }
+
+    // Incase something like a VM won't release inputs to niri.
+    Mod+Escape allow-inhibiting=false { toggle-keyboard-shortcuts-inhibit; }
+
+    // Powers off the monitors. To turn them back on, do any input like
+    // moving the mouse or pressing any other key.
+    Mod+Shift+S { power-off-monitors; }
+    Mod+Shift+Delete { spawn-sh "systemctl poweroff"; }
+
+    // Screenshot keybinds
+    // Shift modifier when used with screen and window screenshots copies to clipboard instead of saving.
+    Print { screenshot; }
+    Ctrl+Print { screenshot-screen; }
+    Ctrl+Shift+Print { spawn-sh "niri msg action screenshot-screen --write-to-disk=false"; }
+    Mod+Print { screenshot-window; }
+    Mod+Shift+Print { spawn-sh "niri msg action screenshot-window --write-to-disk=false"; }
+}
+
+// Disable all gestures
+gestures {
+    hot-corners { off; }
+}
+
+// Application launching/software specific keybinds
+include optional=true "application-keybinds.kdl"
+
