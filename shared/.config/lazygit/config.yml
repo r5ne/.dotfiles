@@ -1,0 +1,7 @@
+disableStartupPopups: true
+
+# Enables nerd font usage
+nerdFontsVersion: "3"
+
+# Opens the most recent repository when ran outside a repository
+notARepository: skip
