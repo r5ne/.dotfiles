@@ -1,0 +1,28 @@
+#!/bin/sh
+
+# File path - must match what's defined as the output_path in
+# ~/.config/matugen/config.toml under [templates.tty]
+TTY_SEQUENCES_PATH="$XDG_CACHE_HOME/matugen/tty-sequences"
+
+# Exit if the file doesn't exist
+if [ ! -f "$TTY_SEQUENCES_PATH" ]; then
+    # echo "Couldn't find tty-sequences in cache: $TTY_SEQUENCES_PATH"
+    exit 0
+fi
+
+
+# -a | -all applies to all terminal instances by writing to ram
+if [ "$1" = "--all" ] || [ "$1" = "-a" ]; then
+    # Optimise by accessing the disk all at once
+    # instead of repeatedly inside the for loop
+    TTY_SEQUENCES=$(printf "%b" "$(cat "$TTY_SEQUENCES_PATH")" | tr -d '\n')
+
+    for pts in /dev/pts/[0-9]*; do
+        if [ -w "$pts" ]; then
+            printf "%s" "$TTY_SEQUENCES" > "$pts"
+        fi
+    done
+else
+    # Apply to current terminal instance
+    printf "%b" "$(cat "$TTY_SEQUENCES_PATH")" | tr -d '\n'
+fi

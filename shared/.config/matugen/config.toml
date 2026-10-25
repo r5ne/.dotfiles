@@ -1,0 +1,56 @@
+[config]
+caching = true
+
+[config.wallpaper]
+set = true
+pre_hook = "pkill swaybg"
+command = "swaybg --mode fill --image '{{ image }}' > /dev/null 2>&1 &"
+
+[templates.includeme]
+input_path = "~/.config/matugen/extra-apps.toml"
+
+[templates.niri]
+input_path = "~/.config/matugen/templates/niri.kdl"
+output_path = "~/.config/niri/colors.kdl"
+
+[templates.foot]
+input_path = "~/.config/matugen/templates/foot.ini"
+output_path = "~/.config/foot/colors.ini"
+
+[templates.tty]
+input_path = "~/.config/matugen/templates/tty-sequences"
+output_path = "~/.cache/matugen/tty-sequences"
+post_hook = "update-osc-sequences --all"
+
+[templates.waybar]
+input_path = "~/.config/matugen/templates/waybar.css"
+output_path = "~/.config/waybar/colors.css"
+post_hook = "killall -SIGUSR2 waybar"
+
+[templates.obsidian]
+input_path = "~/.config/matugen/templates/obsidian.css"
+output_path = "~/documents/nr5m/.obsidian/snippets/matugen.css"
+
+[templates.prismlauncher]
+input_path = "~/.config/matugen/templates/prismlauncher.json"
+output_path = "~/.local/share/PrismLauncher/themes/matugen/theme.json"
+
+[templates.qt5ct]
+input_path = "~/.config/matugen/templates/qtct.conf"
+output_path = "~/.config/qt5ct/colors/matugen.conf"
+
+[templates.qt6ct]
+input_path = "~/.config/matugen/templates/qtct.conf"
+output_path = "~/.config/qt6ct/colors/matugen.conf"
+
+[templates.btop]
+input_path = "~/.config/matugen/templates/btop.theme"
+output_path = "~/.config/btop/themes/matugen.theme"
+
+[templates.discord-midnight]
+input_path = "~/.config/matugen/templates/discord-midnight.css"
+output_path = "~/.local/VencordData/themes/midnight-matugen.css"
+
+[templates.discord-system24]
+input_path = "~/.config/matugen/templates/discord-system24.css"
+output_path = "~/.local/VencordData/themes/system24-matugen.css"
