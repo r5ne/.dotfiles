@@ -1,0 +1,57 @@
+[mgr]
+# file display order
+sort_by="alphabetical"
+sort_dir_first=true
+
+linemode="size"
+# linemode="owner"
+
+show_hidden=true
+show_symlink=true
+
+[opener]
+# Images
+view-image = [
+    { run = "qview %s", orphan = true, for = "unix", desc = "View image" }
+]
+edit-image = [
+    { run = "gimp %s", orphan = true, for = "unix", desc = "Edit image" }
+]
+edit-image-pixel = [
+    { run = "aseprite %s", orphan = true, for = "unix", desc = "Edit pixel art" }
+]
+
+# Videos
+video = [
+    { run = "mpv %s", orphan = true, for = "unix", desc = "Watch video" }
+]
+
+# Text
+text = [
+    { run = "nvim %s", block = true, for = "unix", desc = "Edit text" }
+]
+text-orphan = [
+    { run = "footclient nvim %s", orphan = true, for = "unix", desc = "Edit text in new window" }
+]
+browser = [
+    { run = "librewolf %s", orphan = true, for = "unix", desc = "Open with browser" }
+]
+ebook-reader = [
+    { run = "foliate %s", orphan = true, for = "unix", desc = "Open in eBook reader" }
+]
+
+[open]
+prepend_rules = [
+    # mime types
+    { mime = "image/*", use = [ "view-image", "edit-image", "edit-image-pixel" ] },
+    { mime = "video/*", use = "video" },
+    { mime = "text/*", use = [ "text", "text-orphan" ] },
+
+    # filetypes
+    { url = "*.html", use = [ "text", "browser" ] },
+    { url = "*.pdf", use = [ "ebook-reader", "browser" ] },
+]
+
+[preview]
+# Optimal for high performance (minimal) terminal emulators
+image_delay = 0
