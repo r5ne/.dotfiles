@@ -1,0 +1,48 @@
+{
+    // Bar style
+    "layer": "top", // Bar goes over the top of windows
+    "position": "top",
+
+    "spacing": 0, // Padding is added to individual modules
+    "width": 2176, // 0.85 of total width
+    "height": 44, // 0.04 of total height
+
+    "margin": "0 12px 0 12px",
+
+    // Module layout
+    "modules-left": [
+        "cpu",
+        "memory",
+        "disk",
+    ],
+    "modules-center": [
+        "clock",
+    ],
+    "modules-right": [
+        "cava",
+        "wireplumber",
+        "network",
+    ],
+
+    // Module config
+    "include": [
+        "~/.config/waybar/module-config.jsonc",
+    ],
+    "cava": {
+        "cava_config": "$XDG_CONFIG_HOME/cava/waybar_raw.conf",
+        "input_delay": 2,
+        "format-icons" : ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
+        "actions": {
+                   "on-click-right": "mode"
+                   }
+    },
+
+    // Module config overrides
+    "cpu": {
+        "interval": 10,
+        "format": "{usage}% CPU usage",
+    },
+    "disk": {
+        "path": "/",
+    },
+}

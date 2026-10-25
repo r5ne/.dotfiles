@@ -1,0 +1,9 @@
+program_options:
+  tray: false
+  notify: true
+  automount: true
+  file_manager: xdg-open
+
+notifications:
+  timeout: 0.75
+  device_mounted: 1

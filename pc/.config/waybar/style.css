@@ -1,0 +1,40 @@
+@import "colors.css";
+@import "style-base.css";
+
+* {
+    font-family: jetbrainsmono nerd font;
+    font-size: 16px;
+}
+
+window#waybar > box {
+    border-radius: 12px;
+    margin: 0px 12px 8px 12px;
+    background-color: alpha(@background, 0.75);
+}
+
+.modules-left {
+    margin-left: 15px;
+}
+
+.modules-center {
+    border-left: 0px;
+    border-right: 0px;
+    padding: 0 100px;
+}
+
+.modules-right {
+    margin-right: 15px;
+}
+
+#battery,
+#network,
+#cpu,
+#memory,
+#pulseaudio,
+#bluetooth,
+#disk,
+#wireplumber {
+    min-width: 2px;
+    margin: 0 15px;
+}
+
