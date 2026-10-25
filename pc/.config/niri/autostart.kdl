@@ -1,0 +1,13 @@
+// desktop utils
+spawn-sh-at-startup "waybar"
+// Also change in ~/.local/bin/set-wallpaper
+spawn-sh-at-startup r#"swaybg --mode fill --image '/home/r5ne/.cache/current_wallpaper'"#
+// Device automounting
+spawn-sh-at-startup "udiskie"
+
+// applications
+spawn-sh-at-startup "librewolf"
+spawn-sh-at-startup "obsidian"
+
+// switch to workspace 2
+spawn-sh-at-startup "niri msg action focus-workspace dev"

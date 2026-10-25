@@ -1,0 +1,6 @@
+binds {
+    Mod+Shift+T hotkey-overlay-title="Open the terminal" { spawn "footclient"; }
+    Mod+Shift+B hotkey-overlay-title="Open Librewolf" { spawn "librewolf"; }
+    Mod+Shift+N hotkey-overlay-title="Open Obsidian notes" { spawn-sh "obsidian --enable-features=UseOzonePlatform --ozone-platform-hint=auto"; }
+    Mod+Shift+D hotkey-overlay-title="Open discord" { spawn "discord"; }
+}

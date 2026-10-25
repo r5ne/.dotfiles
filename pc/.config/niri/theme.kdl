@@ -1,0 +1,64 @@
+layout {
+    gaps 20
+    center-focused-column "never"
+
+    // The widths that "switch-preset-column-width" toggles between.
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
+
+
+    // The heights that "switch-preset-window-height" toggles between.
+    preset-window-heights {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+        proportion 1.0
+    }
+
+    // Default width for new windows.
+    default-column-width { proportion 1.0; }
+
+    focus-ring {
+        width 1
+    }
+
+    border {
+        // Disable any fixed border.
+        off
+    }
+}
+
+// Omit their client-side decorations if possible.
+prefer-no-csd
+
+animations {
+    // Disable all animations for performance
+    workspace-switch {
+	off
+    }
+}
+
+// Enable rounded corners for all windows.
+window-rule {
+    geometry-corner-radius 5
+    clip-to-geometry true
+}
+
+window-rule {
+    match app-id="firefox"
+    match app-id="librewolf"
+    draw-border-with-background false
+    background-effect {
+        blur true
+    }
+}
+
+// Cursor size
+cursor {
+    xcursor-theme "breeze_cursors"
+    xcursor-size 32
+}
