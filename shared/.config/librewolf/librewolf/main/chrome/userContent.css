@@ -1,0 +1,328 @@
+@import url("/home/r5ne/.config/librewolf/librewolf/main/chrome/colors.css");
+
+/* Website themes */
+@import url("/home/r5ne/.config/librewolf/librewolf/main/chrome/websites/bitwarden.css");
+/* @import url("/home/r5ne/.config/librewolf/librewolf/main/chrome/websites/youtube.css"); */
+/* @import url("/home/r5ne/.config/librewolf/librewolf/main/chrome/websites/github.css"); */
+
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  :root {
+    color-scheme: dark !important;
+    --newtab-background-color: transparent !important;
+    --newtab-background-color-secondary: transparent !important;
+    --newtab-text-primary-color: #fbfbfe !important;
+    --newtab-text-secondary-color: #cfcfd8 !important;
+    --semi-transparent: rgba(255, 255, 255, 0.1) !important;
+    background: transparent !important;
+
+    --glass-text: #fbfbfe;
+    --glass-muted: #cfcfd8;
+    --glass-popup-bg: rgba(28, 28, 32, 0.85);
+    --glass-popup-border: rgba(255, 255, 255, 0.15);
+    --glass-popup-hover: rgba(255, 255, 255, 0.1);
+  }
+
+  /* Since html/body are transparent here, they will inherit the 75% dark gray from #main-window */
+  html, body, #root, .outer-wrapper, .main-section, .body-wrapper, main {
+    background: transparent !important;
+    background-image: none !important;
+  }
+
+  .wallpaper, .wallpaper-container, #wallpaper, .wallpaper-preview {
+    background: transparent !important;
+    background-image: none !important;
+  }
+
+  .search-wrapper input, .search-handoff-button, .top-site-outer .tile, .card-outer, .weather-card {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    border-radius: 12px !important;
+    color: var(--glass-text) !important;
+  }
+
+  .personalize-button, .open-customization-button, .personalize-button:hover,
+  .open-customization-button:hover, .personalize-button:active, .open-customization-button:active,
+  .open-customization-button[aria-expanded="true"] {
+    background: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
+  }
+
+  .open-customization-button {
+    --button-background-color-primary: var(--semi-transparent) !important;
+    --button-background-color-primary-hover: var(--semi-transparent) !important;
+  }
+
+  .search-wrapper content-search-handoff-ui {
+    --border-radius-medium: 10px !important;
+    --newtab-background-color-secondary: var(--glass-popup-bg) !important;
+    --newtab-text-primary-color: var(--glass-text) !important;
+    --newtab-text-secondary-color: var(--glass-muted) !important;
+    --newtab-border-color: var(--glass-popup-border) !important;
+    --newtab-element-hover-color: var(--glass-popup-hover) !important;
+    --newtab-element-active-color: rgba(255, 255, 255, 0.15) !important;
+    --newtab-primary-action-background: rgba(255, 255, 255, 0.2) !important;
+    --newtab-textbox-focus-color: rgba(255, 255, 255, 0.3) !important;
+    --newtab-textbox-focus-boxshadow: 0 0 0 1px rgba(255, 255, 255, 0.3), 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .search-wrapper .search-inner-wrapper {
+    border-radius: 10px !important;
+  }
+
+  .search-wrapper input, .search-wrapper .search-handoff-button {
+    background-color: var(--glass-popup-bg) !important;
+    border: 1px solid var(--glass-popup-border) !important;
+    border-radius: 10px !important;
+    box-shadow: none !important;
+    color: var(--glass-text) !important;
+    font-weight: 700 !important;
+    outline: none !important;
+  }
+
+  .search-wrapper input:focus, .search-wrapper .search-inner-wrapper:active input,
+  .search-wrapper .search-handoff-button:focus, .search-wrapper .search-handoff-button:hover,
+  .search-wrapper.fake-focus .search-handoff-button {
+    background-color: rgba(255, 255, 255, 0.08) !important;
+    border-color: rgba(255, 255, 255, 0.2) !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .search-wrapper input::placeholder, .search-wrapper .fake-textbox {
+    color: var(--glass-muted) !important;
+    font-weight: 700 !important;
+  }
+
+  .contentSearchSuggestionTable {
+    color: var(--glass-text) !important;
+    background: var(--glass-popup-bg) !important;
+    background-color: var(--glass-popup-bg) !important;
+    border: 1px solid var(--glass-popup-border) !important;
+    border-radius: 10px !important;
+    box-shadow: 0 6px 16px #0004 !important;
+    overflow: hidden !important;
+  }
+
+  .contentSearchSuggestionTable .contentSearchHeader, .contentSearchSuggestionTable .contentSearchOneOffsTable,
+  .contentSearchSuggestionTable .contentSearchSuggestionsList {
+    color: var(--glass-text) !important;
+    background: transparent !important;
+    background-color: transparent !important;
+    border-color: var(--glass-popup-border) !important;
+    font-weight: 700 !important;
+  }
+
+  .contentSearchSuggestionTable .contentSearchHeader {
+    background-color: rgba(255, 255, 255, 0.05) !important;
+  }
+
+  .contentSearchSuggestionTable .contentSearchSuggestionRow, .contentSearchSuggestionTable .contentSearchSearchWithHeaderSearchText,
+  .contentSearchSuggestionTable .contentSearchSettingsButton, .contentSearchSuggestionTable .contentSearchOneOffItem {
+    color: var(--glass-text) !important;
+    font-weight: 700 !important;
+  }
+
+  .contentSearchSuggestionTable .contentSearchSuggestionRow.selected,
+  .contentSearchSuggestionTable .contentSearchSuggestionRow:hover,
+  .contentSearchSuggestionTable .contentSearchOneOffItem.selected,
+  .contentSearchSuggestionTable .contentSearchOneOffItem:hover,
+  .contentSearchSuggestionTable .contentSearchSettingsButton:hover {
+    background: var(--glass-popup-hover) !important;
+    background-color: var(--glass-popup-hover) !important;
+    color: #ffffff !important;
+  }
+
+  .logo, .top-site-outer .tile .top-site-icon, .top-site-outer .tile .rich-icon,
+  .top-site-outer .tile .default-icon, .top-site-outer .tile .search-topsite,
+  .top-site-outer .tile .icon-wrapper img, .top-site-outer .tile .icon img {
+    filter: grayscale(1) opacity(55%) !important;
+  }
+
+  .top-site-outer .tile .icon-wrapper.letterfallback, .top-site-outer .tile .icon-wrapper.letter-fallback {
+    background-color: var(--semi-transparent) !important;
+    filter: grayscale(1) opacity(55%) !important;
+  }
+
+  .top-site-outer .tile .icon-wrapper.letterfallback::before, .top-site-outer .tile .icon-wrapper.letter-fallback::before,
+  .top-site-outer .tile .default-icon[data-fallback]::before, .top-site-outer .tile .search-topsite[data-fallback]::before {
+    filter: grayscale(1) !important;
+  }
+
+  .button-background {
+    background-color: var(--semi-transparent) !important;
+  }
+
+  .button-background:hover {
+    background-color: var(--glass-popup-hover) !important;
+  }
+}
+
+@-moz-document url-prefix("about:newtab"), url-prefix("about:home") {
+  :root {
+    --focus-outline-color: rgba(255, 255, 255, 0.4) !important;
+    --focus-outline: 2px solid rgba(255, 255, 255, 0.4) !important;
+    --newtab-focus-outline: rgba(255, 255, 255, 0.2) !important;
+    --newtab-focus-border: rgba(255, 255, 255, 0.4) !important;
+    --newtab-focus-border-selected: rgba(255, 255, 255, 0.5) !important;
+
+    --newtab-primary-action-background: rgba(255, 255, 255, 0.15) !important;
+    --newtab-primary-action-background-dimmed: rgba(255, 255, 255, 0.1) !important;
+    --newtab-button-background: rgba(255, 255, 255, 0.1) !important;
+    --newtab-button-focus-background: rgba(255, 255, 255, 0.15) !important;
+    --newtab-button-focus-border: rgba(255, 255, 255, 0.3) !important;
+    --newtab-button-hover-background: rgba(255, 255, 255, 0.12) !important;
+    --newtab-button-active-background: rgba(255, 255, 255, 0.18) !important;
+  }
+
+  .top-site-outer .context-menu-button {
+    color: var(--glass-text) !important;
+    background-color: rgba(30, 30, 32, 0.86) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 50% !important;
+    box-shadow: none !important;
+    outline: none !important;
+  }
+
+  .top-site-outer .context-menu-button:hover, .top-site-outer .context-menu-button:active,
+  .top-site-outer .context-menu-button[aria-expanded="true"] {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.1) !important;
+  }
+
+  panel-list {
+    color-scheme: dark !important;
+    --panel-list-background-color: rgba(28, 28, 32, 0.94) !important;
+    --panel-list-text-color: #fbfbfe !important;
+    --panel-list-border-color: rgba(255, 255, 255, 0.15) !important;
+    --panel-list-border-radius: 12px !important;
+    --panel-list-box-shadow: 0 10px 28px rgba(0, 0, 0, 0.42) !important;
+
+    --button-background-color-menu-hover: rgba(255, 255, 255, 0.1) !important;
+    --button-text-color-menu-hover: #ffffff !important;
+    --button-background-color-menu-active: rgba(255, 255, 255, 0.15) !important;
+    --button-text-color-menu-active: #ffffff !important;
+    --panel-separator-color: rgba(255, 255, 255, 0.1) !important;
+  }
+
+  .edit-topsites .modal, .modal:has(.topsite-form) {
+    color-scheme: dark !important;
+    color: var(--glass-text) !important;
+    background: rgba(30, 30, 32, 0.91) !important;
+    background-color: rgba(30, 30, 32, 0.91) !important;
+    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    border-radius: 14px !important;
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.48) !important;
+  }
+
+  .topsite-form {
+    color: var(--glass-text) !important;
+    --button-background-color: rgba(255, 255, 255, 0.07) !important;
+    --button-background-color-hover: rgba(255, 255, 255, 0.12) !important;
+    --button-background-color-active: rgba(255, 255, 255, 0.18) !important;
+    --button-text-color: #fbfbfe !important;
+    --button-text-color-hover: #ffffff !important;
+    --button-border-color: rgba(255, 255, 255, 0.15) !important;
+    --button-border-color-hover: rgba(255, 255, 255, 0.25) !important;
+  }
+
+  .topsite-form input:not([type="checkbox"]) {
+    color: var(--glass-text) !important;
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 9px !important;
+    box-shadow: none !important;
+    outline: none !important;
+    caret-color: var(--glass-text) !important;
+  }
+
+  .topsite-form input:not([type="checkbox"]):focus,
+  .topsite-form input:not([type="checkbox"]):focus-visible {
+    background: rgba(0, 0, 0, 0.4) !important;
+    border-color: rgba(255, 255, 255, 0.3) !important;
+    outline: 2px solid rgba(255, 255, 255, 0.2) !important;
+  }
+
+  .topsite-form moz-button[type="primary"] {
+    --button-background-color: rgba(255, 255, 255, 0.15) !important;
+    --button-background-color-hover: rgba(255, 255, 255, 0.2) !important;
+    --button-background-color-active: rgba(255, 255, 255, 0.25) !important;
+    --button-text-color: #ffffff !important;
+    --button-text-color-hover: #ffffff !important;
+    --button-border-color: rgba(255, 255, 255, 0.2) !important;
+    --button-border-color-hover: rgba(255, 255, 255, 0.3) !important;
+  }
+}
+
+@-moz-document url("chrome://global/content/commonDialog.xhtml") {
+  :root, #commonDialogWindow, #commonDialog {
+    color-scheme: dark !important;
+    --in-content-page-background: rgba(30, 30, 32, 0.88) !important;
+    --in-content-page-color: #fbfbfe !important;
+    --in-content-text-color: #fbfbfe !important;
+    --in-content-button-text-color: #fbfbfe !important;
+    --in-content-button-text-color-hover: #ffffff !important;
+    --in-content-button-text-color-active: #ffffff !important;
+    --in-content-button-background: rgba(255, 255, 255, 0.1) !important;
+    --in-content-button-background-hover: rgba(255, 255, 255, 0.15) !important;
+    --in-content-button-background-active: rgba(255, 255, 255, 0.2) !important;
+    --in-content-primary-button-text-color: #ffffff !important;
+    --in-content-primary-button-text-color-hover: #ffffff !important;
+    --in-content-primary-button-text-color-active: #ffffff !important;
+    --in-content-primary-button-background: rgba(255, 255, 255, 0.15) !important;
+    --in-content-primary-button-background-hover: rgba(255, 255, 255, 0.2) !important;
+    --in-content-primary-button-background-active: rgba(255, 255, 255, 0.25) !important;
+    --in-content-focus-outline-color: rgba(255, 255, 255, 0.3) !important;
+    background-color: transparent !important;
+    color: #fbfbfe !important;
+  }
+
+  #commonDialog {
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background: var(--in-content-page-background) !important;
+    background-image: none !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 10px !important;
+    color: var(--in-content-page-color) !important;
+  }
+
+  #infoTitle, #infoBody, label, description {
+    color: #fbfbfe !important;
+  }
+
+  button {
+    -moz-appearance: none !important;
+    appearance: none !important;
+    background-image: none !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+    color: #fbfbfe !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 999px !important;
+  }
+
+  button[dlgtype="accept"], button[default="true"] {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+    border-color: rgba(255, 255, 255, 0.25) !important;
+    color: #ffffff !important;
+  }
+
+  button:hover {
+    background-color: rgba(255, 255, 255, 0.15) !important;
+  }
+
+  button[dlgtype="accept"]:hover, button[default="true"]:hover {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+  }
+
+  input, textbox {
+    background: rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.15) !important;
+    border-radius: 7px !important;
+    color: #fbfbfe !important;
+    caret-color: #fbfbfe !important;
+  }
+}
+
