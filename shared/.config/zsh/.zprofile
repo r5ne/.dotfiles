@@ -8,6 +8,7 @@ export XDG_STATE_HOME="$HOME/.local/state"
 
 # Add local binaries to path
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.local/bin/scripts:$PATH"
 
 # QT
 export QT_QPA_PLATFORMTHEME=qt6ct
