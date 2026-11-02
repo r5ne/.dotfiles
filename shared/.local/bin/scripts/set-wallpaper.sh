@@ -1,9 +1,10 @@
 #!/bin/sh
 
 # Requires xdg-user-dirs
-PICTURES_DIR="$(xdg-user-dir PICTURES)"
+# PICTURES_DIR="$(xdg-user-dir PICTURES)"
 # Default to ~/pictures/wallpapers if no xdg-user-dirs
-WALLPAPER_DIR="${PICTURES_DIR:-$HOME/pictures}/wallpapers"
+# WALLPAPER_DIR="${PICTURES_DIR:-$HOME/pictures}/wallpapers"
+WALLPAPER_DIR="/mnt/kingston/linux-storage/data/pictures/wallpapers"
 # Also change in ~/.config/niri/autostart.kdl
 WALLPAPER_CACHE_DIR="${XDG_CACHE_HOME:-$HOME/.cache}/current_wallpaper"
 
