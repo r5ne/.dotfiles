@@ -42,14 +42,16 @@ ebook-reader = [
 
 [open]
 prepend_rules = [
+    # filetypes
+    { url = "*.xcf", use = "edit-image" },
+    { url = "*.ase*", use = "edit-image-pixel" },
+    { url = "*.html", use = [ "text", "browser" ] },
+    { url = "*.pdf", use = [ "ebook-reader", "browser" ] },
+
     # mime types
     { mime = "image/*", use = [ "view-image", "edit-image", "edit-image-pixel" ] },
     { mime = "video/*", use = "video" },
     { mime = "text/*", use = [ "text", "text-orphan" ] },
-
-    # filetypes
-    { url = "*.html", use = [ "text", "browser" ] },
-    { url = "*.pdf", use = [ "ebook-reader", "browser" ] },
 ]
 
 [preview]
