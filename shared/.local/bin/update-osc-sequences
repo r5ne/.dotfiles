@@ -10,19 +10,15 @@ if [ ! -f "$TTY_SEQUENCES_PATH" ]; then
     exit 0
 fi
 
-
-# -a | -all applies to all terminal instances by writing to ram
+# -a | -all applies to all terminal instances
 if [ "$1" = "--all" ] || [ "$1" = "-a" ]; then
-    # Optimise by accessing the disk all at once
-    # instead of repeatedly inside the for loop
-    TTY_SEQUENCES=$(printf "%b" "$(cat "$TTY_SEQUENCES_PATH")" | tr -d '\n')
-
     for pts in /dev/pts/[0-9]*; do
         if [ -w "$pts" ]; then
-            printf "%s" "$TTY_SEQUENCES" > "$pts"
+            # 'cat' reads the raw escapes, '&' prevents blocking
+            cat "$TTY_SEQUENCES_PATH" > "$pts" &
         fi
     done
 else
-    # Apply to current terminal instance
-    printf "%b" "$(cat "$TTY_SEQUENCES_PATH")" | tr -d '\n'
+    # Apply to current terminal instance directly
+    cat "$TTY_SEQUENCES_PATH"
 fi
