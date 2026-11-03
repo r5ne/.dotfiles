@@ -2,5 +2,8 @@
 dot_config/waywall/
 dot_config/udiskie/
 
+
+dot_config/matugen/templates/discord*
+dot_config/matugen/templates/prismlauncher.json*
 dot_config/digikam*
 {{- end }}
