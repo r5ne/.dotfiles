@@ -1,0 +1,47 @@
+@import "colors.css";
+
+* {
+    color: @primary;
+
+    border: none;
+    border-radius: 0;
+
+    font-family: {{ index .waybar .host "font-family" }};
+    font-size: {{ index .waybar .host "font-size" }}px;
+}
+
+window#waybar {
+    background-color: transparent;
+}
+
+window#waybar > box {
+    border-radius: {{ index .waybar .host "border-radius" }}px;
+    margin: 0px {{ index .waybar .host "margin-x" }}px {{ index .waybar .host "margin-y" }}px {{ index .waybar .host "margin-x" }}px;
+    background-color: alpha(@background, 0.85);
+}
+
+.modules-left {
+    margin-left: {{ index .waybar .host "modules-margin" }}px;
+}
+
+.modules-center {
+    border-left: {{ index .waybar .host "center-border-width" }}px{{ if eq .host "laptop" }} solid alpha(@primary, 0.2){{ end }};
+    border-right: {{ index .waybar .host "center-border-width" }}px{{ if eq .host "laptop" }} solid alpha(@primary, 0.2){{ end }};
+    padding: 0 {{ index .waybar .host "center-padding" }}px;
+}
+
+.modules-right {
+    margin-right: {{ index .waybar .host "modules-margin" }}px;
+}
+
+#battery,
+#network,
+#cpu,
+#memory,
+#pulseaudio,
+#bluetooth,
+#disk,
+#wireplumber {
+    min-width: 2px;
+    margin: 0 {{ index .waybar .host "modules-separator-margin" }}px;
+}

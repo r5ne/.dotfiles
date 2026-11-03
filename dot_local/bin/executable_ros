@@ -1,0 +1,4 @@
+#!/bin/sh
+export TERM=xterm-256color
+CONTAINER_PATH="$HOME/projects/introduction-to-robotics/itr.sif"
+exec apptainer run -B /run/user/$(id -u) "$CONTAINER_PATH" "$@"

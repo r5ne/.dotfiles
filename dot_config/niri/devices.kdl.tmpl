@@ -1,0 +1,37 @@
+input {
+    keyboard {
+        repeat-rate 35
+        repeat-delay 300
+        // Set numlock on by default.
+        numlock
+    }
+    {{ if eq .host "laptop" }}
+    touchpad {
+        // Disable trackpad acceleration
+        accel-profile "flat"
+        // Sensitivity
+        accel-speed 0.75
+    }
+
+    // Thinkpad red button
+    trackpoint {
+        // Disable trackpoint acceleration
+        accel-profile "flat"
+        // Sensitivity
+        accel-speed 0.25
+    }
+    {{- end -}}
+}
+{{ if eq .host "pc" }}
+output "DP-1" {
+    mode "2560x1440@164.999"
+    position x=0 y=0
+    scale 1
+}
+{{ else if eq .host "laptop" }}
+output "eDP-1" {
+    mode "1366x768@59.978"
+    position x=0 y=0
+    scale 1
+}
+{{- end -}}

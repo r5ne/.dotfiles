@@ -1,0 +1,23 @@
+#!/bin/sh
+
+# Paths & Environment
+TOUHOU_DIR="/mnt/kingston/linux-storage/games/standalone/touhou"
+export WINEPREFIX="$TOUHOU_DIR/wineprefix"
+export WINEDLLOVERRIDES="d3d8=n,b"
+export PULSE_LATENCY_MSEC=60
+
+GAME_DIR="$TOUHOU_DIR/th06"
+THCRAP_DIR="$TOUHOU_DIR/thcrap"
+
+# 1. Launch the game via ThCRAP in the BACKGROUND (&)
+# Redirecting stderr/stdout keeps your terminal clean of Wine spam.
+cd "$THCRAP_DIR" || exit 1
+wine thcrap_loader.exe en.js th06 &> /dev/null &
+
+# 2. Give the engine time to spin up.
+# This ensures '東方紅魔郷.exe' is fully active in the Wine process tree.
+sleep 2.2
+
+# 3. Fire the centralized thprac binary from the root directory.
+# It will instantly find the running process, inject its layers, and hook up.
+wine "$TOUHOU_DIR/thprac.exe" --attach &> /dev/null
