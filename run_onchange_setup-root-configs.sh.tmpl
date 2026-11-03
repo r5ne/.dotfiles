@@ -1,0 +1,104 @@
+#!/usr/bin/env bash
+
+# This script does depend on the username and isn't autoset based on templates.
+# Currently this is 'r5ne'.
+
+# Exits the script if a variable is unset or a pipe fails
+set -euo pipefail
+# Prompts to elevate prividges (so that future sudo calls don't require a password every time)
+sudo --validate
+
+# Utility functions
+msg() { echo -e "\033[1;34m::\033[0m $1"; }
+err() { echo -e "\033[1;31m!!\033[0m $1" >&2; exit 1; }
+sudoinstall() {
+    local dest="$1"
+    local tmpfile=$(mktemp)
+    cat > "$tmpfile"
+    sudo install -D --debug --mode=644 --owner=root --group=root --compare "$tmpfile" "$dest"
+    rm --force "$tmpfile"
+}
+
+msg "Adding agetty login service to tty1."
+sudoinstall "/etc/systemd/system/getty@tty1.service.d/override.conf" << EOF
+[Service]
+# Override the default ExecStart parameters
+ExecStart=
+# Use agetty to automatically login in the tty1 virtual console
+ExecStart=-/usr/bin/agetty {{ if eq .host "pc" }}--autologin {{ .chezmoi.username }}{{ else }}'-- {{ .chezmoi.username }}' --skip-login{{ end }} --noclear --noreset - ${TERM}
+EOF
+
+msg "Replacing bash with dash."
+sudo ln --symbolic --force --no-target-directory --verbose dash /usr/bin/sh
+
+# Dash post install setup
+# Make a pacman hook so that bash updates don't overwrite the /usr/bin/sh symlink
+msg "Setting up a pacman hook so bash updates don't overwrite dash."
+sudoinstall /etc/pacman.d/hooks/dash.hook << EOF
+[Trigger]
+Type = Package
+Operation = Install
+Operation = Upgrade
+Target = bash
+
+[Action]
+Description = Re-pointing /bin/sh symlink to dash...
+When = PostTransaction
+Exec = /usr/bin/ln -sfT dash /usr/bin/sh
+Depends = dash
+EOF
+
+msg "Setting zsh ZDOTDIR to ~/.config/zsh"
+sudoinstall /etc/zsh/zshenv << EOF
+export ZDOTDIR="$HOME/.config/zsh"
+EOF
+
+# NTP setup
+msg "Setting up sntp service via a timer."
+sudoinstall /etc/systemd/system/sntp.service << EOF
+[Unit]
+Description=Run SNTP
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=oneshot
+ExecStart=/usr/bin/sntp -S pool.ntp.org
+EOF
+sudoinstall /etc/systemd/system/sntp.timer << EOF
+[Unit]
+Description=Runs SNTP every hour
+
+[Timer]
+OnBootSec=5min
+OnUnitActiveSet=1h
+Persistent=true
+
+[Install]
+WantedBy=timers.target
+EOF
+sudo systemctl enable --now --verbose "/etc/systemd/system/sntp.timer"
+
+# DNS setup
+msg "Overriding the default ISP DNS with Cloudflare."
+sudoinstall /etc/systemd/resolved.conf << EOF
+[Resolve]
+# Override ISP DNS with Cloudflare DNS resolver
+DNS=1.1.1.1#one.one.one.one 1.0.0.1#one.one.one.one 2606:4700:4700::1111#one.one.one.one 2606:4700:4700::1001#one.one.one.one
+# Fall back to Quad9 DNS resolver
+FallbackDNS=9.9.9.9#dns.quad9.net 149.112.112.112#dns.quad9.net 2620:fe::fe#dns.quad9.net 2620:fe::9#dns.quad9.net
+EOF
+
+{{- if eq .host "laptop" }}
+msg "Adding tlp overrides."
+sudoinstall /etc/tlp.d/00-enable-wifi-at-startup.conf << EOF
+DEVICES_TO_ENABLE_ON_STARTUP="wifi"
+EOF
+sudoinstall /etc/tlp.d/01-battery-charge-threshold.conf << EOF
+# Only start charging again once at 75% battery
+# (so charge doesn't constantly fluctuate from 79-80%)
+START_CHARGE_THRESH_BAT0=75
+# Cap maximum charge at 80
+STOP_CHARGE_THRESH_BAT0=80
+EOF
+{{- end }}
