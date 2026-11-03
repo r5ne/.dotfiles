@@ -9,9 +9,15 @@
 
 {{- /* Defaults */ -}}
 {{- $xdg_documents_dir := joinPath .chezmoi.homeDir "documents" -}}
+{{- $xdg_music_dir := joinPath .chezmoi.homeDir "music" -}}
+{{- $xdg_pictures_dir := joinPath .chezmoi.homeDir "pictures" -}}
+{{- $xdg_videos_dir := joinPath .chezmoi.homeDir "videos" -}}
 {{- $browser := "librewolf" -}}
 {{- /* Non-default (strange) overrides */ -}}
 {{- if eq $host "pc" -}}
+{{-   $xdg_music_dir = "/mnt/kingston/linux-storage/data/music" -}}
+{{-   $xdg_pictures_dir = "/mnt/kingston/linux-storage/data/pictures" -}}
+{{-   $xdg_videos_dir = "/mnt/kingston/linux-storage/data/videos" -}}
 {{- else if eq $host "laptop" -}}
 {{-   $browser = "qutebrowser" -}}
 {{- end -}}
@@ -22,5 +28,9 @@
     username = {{ $username | quote }}
 
     xdg_documents_dir = {{ $xdg_documents_dir | quote }}
+    xdg_music_dir = {{ $xdg_music_dir | quote }}
+    xdg_pictures_dir = {{ $xdg_pictures_dir | quote }}
+    xdg_videos_dir = {{ $xdg_videos_dir | quote }}
 
     browser = {{ $browser | quote }}
+
