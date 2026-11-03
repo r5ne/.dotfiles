@@ -1,6 +1,7 @@
 {{- if ne .host "pc" }}
 dot_config/waywall/
 dot_config/udiskie/
+dot_config/librewolf/
 
 
 dot_config/matugen/templates/discord*
