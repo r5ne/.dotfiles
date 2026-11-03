@@ -5,6 +5,7 @@ dot_config/librewolf/
 
 dot_local/bin/scripts/*digikam*
 dot_local/bin/scripts/*printer-scan.sh*
+dot_local/bin/*touhou6*
 
 dot_config/matugen/templates/discord*
 dot_config/matugen/templates/prismlauncher.json*
