@@ -1,8 +1,0 @@
-[tools]
-# Programming languages
-java = "latest"
-python = "latest"
-
-# Development tools
-superhtml = "latest"
-uv = "latest"

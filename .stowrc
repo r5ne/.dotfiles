@@ -1,4 +1,0 @@
---dir=$HOME/.dotfiles
---target=$HOME
---ignore=setup-deps
---no-folding
