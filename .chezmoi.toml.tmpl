@@ -1,0 +1,5 @@
+{{- /* Variables to prompt for on initial setup */ -}}
+
+{{- $host := promptStringOnce . "host" "What type of machine is this? (pc/laptop)" -}}
+[data]
+    host = {{ $host | quote }}
