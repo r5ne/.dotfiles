@@ -1,0 +1,3 @@
+{{- if ne .host "pc" }}
+dot_config/udiskie/
+{{- end }}
