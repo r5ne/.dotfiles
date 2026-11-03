@@ -1,0 +1,35 @@
+[waybar.pc]
+# bar
+width = 2176
+height = 44
+border-radius = 12
+margin-x = 12
+margin-y = 8
+
+# font
+font-family = "jetbrainsmono nerd font"
+font-size = 16
+
+# modules
+modules-margin = 15
+modules-separator-margin = 15
+center-border-width = 0
+center-padding = 100
+
+[waybar.laptop]
+# bar
+width = 1161
+height = 32
+border-radius = 8
+margin-x = 8
+margin-y = 6
+
+# font
+font-family = "iosevkaterm nerd font"
+font-size = 12
+
+# modules
+modules-margin = 8
+modules-separator-margin = 7.5
+center-border-width = 1
+center-padding = 50
