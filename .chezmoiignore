@@ -1,4 +1,5 @@
 {{- if ne .host "pc" }}
+dot_config/waywall/
 dot_config/udiskie/
 
 dot_config/digikam*
