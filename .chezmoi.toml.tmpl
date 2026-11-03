@@ -13,6 +13,7 @@
 {{- $xdg_pictures_dir := joinPath .chezmoi.homeDir "pictures" -}}
 {{- $xdg_videos_dir := joinPath .chezmoi.homeDir "videos" -}}
 {{- $browser := "librewolf" -}}
+
 {{- /* Non-default (strange) overrides */ -}}
 {{- if eq $host "pc" -}}
 {{-   $xdg_music_dir = "/mnt/kingston/linux-storage/data/music" -}}
@@ -34,3 +35,5 @@
 
     browser = {{ $browser | quote }}
 
+[bitwarden]
+unlock = "auto"
