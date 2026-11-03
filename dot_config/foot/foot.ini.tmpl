@@ -1,7 +1,7 @@
 [main]
 # Scale font based on monitor DPI
 dpi-aware=yes
-font=IosevkaTermNerdFont:size=16
+font=IosevkaTermNerdFont:size={{ if eq .host "laptop" }}12{{ else }}16{{ end }}
 
 # Provided by a matugen template
 include=~/.config/foot/colors.ini
