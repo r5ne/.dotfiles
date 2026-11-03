@@ -2,5 +2,16 @@
 
 {{- $choices := list "pc" "laptop" -}}
 {{- $host := promptChoiceOnce . "host" "What type of machine is this?" $choices -}}
+{{- $email := promptStringOnce . "email" "What is the email of your github account?" -}}
+{{- $username := promptStringOnce . "username" "What is the username of your github account?" -}}
+
+{{- /* Variables to derive */ -}}
+
+{{- /* Defaults */ -}}
+{{- $xdg_documents_dir := joinPath .chezmoi.homeDir "documents" -}}
 [data]
     host = {{ $host | quote }}
+    email = {{ $email | quote }}
+    username = {{ $username | quote }}
+
+    xdg_documents_dir = {{ $xdg_documents_dir | quote }}
