@@ -1,0 +1,33 @@
+// Disable the "Important Hotkeys" pop-up at startup.
+hotkey-overlay {
+    skip-at-startup
+    hide-not-bound
+}
+
+// Fix for electron-based applications running electron >28.
+environment {
+      XDG_SESSION_TYPE "wayland"
+}
+
+// Don't have windows spawned at startup change workspace
+window-rule {
+    match at-startup=true
+    open-focused false
+}
+
+// desktop utils
+spawn-sh-at-startup "waybar"
+// Also change in ~/.local/share/chezmoi/dot_local/bin/scripts/set-wallpaper.sh.tmpl
+spawn-sh-at-startup r#"swaybg --mode fill --image '{{ .chezmoi.homeDir }}/.cache/current_wallpaper'"#
+
+{{- if eq .host "pc" }}
+// Device automounting
+spawn-sh-at-startup "udiskie"
+{{- end }}
+
+// applications
+spawn-sh-at-startup "{{ .browser }}"
+spawn-sh-at-startup "obsidian"
+
+// switch to workspace 2
+spawn-sh-at-startup "niri msg action focus-workspace dev"
