@@ -1,13 +1,13 @@
 {{- if ne .host "pc" }}
-dot_config/waywall/
-dot_config/udiskie/
-dot_config/librewolf/
+.config/waywall/
+.config/udiskie/
+.config/librewolf/
 
-dot_local/bin/scripts/*digikam*
-dot_local/bin/scripts/*printer-scan.sh*
-dot_local/bin/*touhou6*
+.local/bin/scripts/*digikam*
+.local/bin/scripts/*printer-scan.sh*
+.local/bin/*touhou6*
 
-dot_config/matugen/templates/discord*
-dot_config/matugen/templates/prismlauncher.json*
-dot_config/digikam*
+.config/matugen/templates/discord*
+.config/matugen/templates/prismlauncher.json*
+.config/digikam*
 {{- end }}
