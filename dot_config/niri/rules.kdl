@@ -6,9 +6,10 @@ window-rule {
 
 // Window workspace restrictions
 window-rule {
-    match app-id="firefox"
     match app-id="qutebrowser"
     match app-id="librewolf"
+    match app-id="firefox"
+    match app-id="floorp"
     open-on-workspace "browser"
 }
 window-rule {
@@ -17,5 +18,22 @@ window-rule {
 }
 window-rule {
     match app-id="discord"
+    match app-id="vesktop"
     open-on-workspace "chat"
+}
+
+// Floating window overrides
+window-rule {
+    match app-id="firefox" title="&Picture-in-Picture$"
+    match app-id="floorp" title="^Picture-in-Picture$"
+    match app-id="librewolf" title="^Picture-in-Picture$"
+    match app-id="qutebrowser" title="^Picture-in-Picture$"
+    open-floating true
+}
+
+// Black out sensitive applications from screen capture
+window-rule {
+    match app-id=r#"^org\.keepassxc\.KeePassXC$"#
+    match app-id=r#"^org\.gnome\.World\.Secrets$"#
+    block-out-from "screen-capture"
 }
