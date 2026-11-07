@@ -2,6 +2,7 @@
 .config/waywall/
 .config/udiskie/
 .config/librewolf/
+.config/alsoft*
 
 .local/bin/scripts/*digikam*
 .local/bin/scripts/*printer-scan.sh*
