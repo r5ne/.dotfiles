@@ -18,7 +18,7 @@ la="ls --human-readable --all -l --color=auto --group-directories-first"
 # XDG compliancy fixes
 alias \
 \
-wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts" \
+wget='wget --hsts-file="$XDG_DATA_HOME/wget-hsts"' \
 adb='HOME="$XDG_DATA_HOME"/android adb' \
 mvn="mvn -gs $XDG_CONFIG_HOME/maven/settings.xml" \
 
