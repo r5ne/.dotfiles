@@ -1,7 +1,7 @@
 binds {
     // Desktop manager applications
     // Also see window rules for app-launcher app-id windows
-    Mod+Space hotkey-overlay-title="Open an application" { spawn-sh "footclient --window-size-chars=120x40 --app-id=app-launcher fsel --detach"; }
+    Mod+Space hotkey-overlay-title="Open an application" { spawn-sh "footclient --window-size-chars=120x40 --app-id=app-launcher fsel --detach --replace -vv"; }
 
     // User applications
     Mod+Shift+T hotkey-overlay-title="Open the terminal" { spawn "footclient"; }
