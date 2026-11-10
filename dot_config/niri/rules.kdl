@@ -1,6 +1,9 @@
 // Window size rules
+
+// Windows which should default to 50% size
 window-rule {
     match app-id="foot"
+    match app-id="org.prismlauncher.PrismLauncher"
     default-column-width { proportion 0.5; }
 }
 
