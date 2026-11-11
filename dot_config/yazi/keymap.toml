@@ -1,0 +1,18 @@
+[mgr]
+prepend_keymap = [
+    # Overwrite symlink keybinds since the Ctrl + - bind conflicts with most
+    # terminal emulator binds for changing the font size.
+    { on = [ "-", "r" ], run = "link --relative",
+        desc = "Symlink the [r]elative path of yanked files" },
+    { on = [ "-", "R" ], run = "link --relative --follow",
+        desc = "Symlink the [r]elative path of yanked files, following any linked symlinks and linking the actual files" },
+    { on = [ "-", "a" ], run = "link",
+        desc = "Symlink the [a]bsolute path of the yanked files" },
+    { on = [ "-", "A" ], run = "link",
+        desc = "Symlink the [a]bsolute path of the yanked files, following any linked symlinks and linking the actual files" },
+    { on = [ "-", "h" ], run = "hardlink --follow",
+        desc = "Hardlink the yanked files, following any linked symlinks and hardlinking the actual files" },
+    { on = [ "-", "H" ], run = "hardlink",
+        desc = "Hardlink the yanked files, hardlinking to the symlinks directly" },
+]
+
