@@ -1,6 +1,6 @@
 [tools]
-# Programming languages
-java = "latest"
+# For programming
+java = ["temurin"{{ if eq .host "pc" }}, "temurin-25", "temurin-21"{{ end }}]
 python = "latest"
 
 # Development tools
