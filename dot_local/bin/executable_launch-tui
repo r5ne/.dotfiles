@@ -1,0 +1,6 @@
+#!/bin/sh
+APP_ID="$1"
+LAUNCH_CMD="${@:2}"
+
+# Focus the window if it already exists else launch it
+niri msg action focus-window --app-id "$APP_ID" || $LAUNCH_CMD
