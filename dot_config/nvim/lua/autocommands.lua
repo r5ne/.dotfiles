@@ -31,6 +31,8 @@ end
 
 -- Set up .desktop LSP via desktop-file-validate CLI tool
 local namespace = vim.api.nvim_create_namespace("desktop_validator")
+local DIAG_ERROR = vim.diagnostic.severity.ERROR
+local DIAG_WARN = vim.diagnostic.severity.WARN
 vim.api.nvim_create_autocmd("BufWritePost", {
   pattern = "*.desktop",
   callback = function(args)
@@ -47,7 +49,7 @@ vim.api.nvim_create_autocmd("BufWritePost", {
             lnum = 1
           end
           if severity_str and msg then
-            local severity = severity_str == "error" and vim.diagnostic.severity.ERROR or vim.diagnostic.severity.WARN
+            local severity = severity_str == "error" and DIAG_ERROR or DIAG_WARN
             table.insert(diagnostics, {
               lnum = tonumber(lnum) - 1,
               col = 0,
