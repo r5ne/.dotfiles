@@ -1,5 +1,6 @@
 terminal_launcher = "footclient"
 
+# Styling
 show_main_border = true
 show_items_border = true
 show_input_border = true
@@ -9,9 +10,13 @@ show_input_prompt = true
 show_selection_marker = true
 
 [app_launcher]
+# Styling
 icon_mode = "none"
 items_background_color = "Reset"
 items_selection_background_color = "Reset"
 items_selection_rounded = true
 main_background_color = "Reset"
 input_background_color = "Reset"
+
+# Required for ~/.local/share/applications to override /usr/share/applications correctly
+auto_hide_duplicates = true
