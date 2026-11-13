@@ -25,4 +25,5 @@
 .local/share/applications/*Team\ Fortress*
 .local/share/applications/*Terraria*
 .local/share/applications/*tModLoader*
+.local/share/applications/*osu*
 {{- end }}
