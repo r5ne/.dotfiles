@@ -38,6 +38,7 @@ window-rule {
 window-rule {
     match app-id="app-launcher"
     match app-id="termfilechooser"
+    match app-id="btop"
     open-floating true
 }
 
