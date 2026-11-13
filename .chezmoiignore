@@ -4,11 +4,25 @@
 .config/librewolf/
 .config/alsoft*
 
+.config/matugen/templates/discord*
+.config/matugen/templates/prismlauncher.json*
+.config/digikam*
+
 .local/bin/scripts/*digikam*
 .local/bin/scripts/*printer-scan.sh*
 .local/bin/*touhou6*
 
-.config/matugen/templates/discord*
-.config/matugen/templates/prismlauncher.json*
-.config/digikam*
+.local/share/applications/*Bloons\ TD\ 6*
+.local/share/applications/*Dead\ Cells*
+.local/share/applications/*FAITH*
+.local/share/applications/*Geometry\ Dash*
+.local/share/applications/*Half-Life*
+.local/share/applications/*Hollow\ Knight*
+.local/share/applications/*Magic\ Rampage*
+.local/share/applications/*PEAK*
+.local/share/applications/*Subnautica*
+.local/share/applications/*steam*
+.local/share/applications/*Team\ Fortress*
+.local/share/applications/*Terraria*
+.local/share/applications/*tModLoader*
 {{- end }}
