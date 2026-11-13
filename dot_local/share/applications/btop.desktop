@@ -14,6 +14,6 @@ Icon=btop
 Exec=tui-launch -a btop btop
 Terminal=false
 Categories=System;Monitor;ConsoleOnly;
-Keywords=system;process;task
+Keywords=System resources monitor;System resources manager;Process monitor;Process manager;Task manager
 Keywords[zh_TW]=系統;進程;處理程序;任務
 Keywords[pt_BR]=sistema;processos;tarefas

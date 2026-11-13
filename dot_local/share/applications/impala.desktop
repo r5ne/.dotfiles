@@ -1,0 +1,11 @@
+[Desktop Entry]
+Type=Application
+Version=1.0
+Name=impala
+GenericName=Wifi manager
+Comment=TUI wifi manager for iwd
+Keywords=WiFi;iwd tui;Wireless network manager;
+Icon=impala
+Exec=tui-launch -a impala impala
+Terminal=false
+Categories=System;Network;Monitor;ConsoleOnly;

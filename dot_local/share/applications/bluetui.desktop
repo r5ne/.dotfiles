@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=bluetui
+GenericName=Bluetooth manager
+Comment=TUI bluetooth manager for bluez
+Keywords=Bluetooth;Bluez TUI;Bluetooth connection manager;
+Icon=bluetui
+Exec=tui-launch -a bluetui bluetui
+Terminal=false
+Categories=System;Monitor;ConsoleOnly;

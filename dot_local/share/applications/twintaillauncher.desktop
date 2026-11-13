@@ -1,0 +1,10 @@
+[Desktop Entry]
+Categories=GameTool;LauncherStore;
+Comment=Your anime games, one launcher
+Exec=twintaillauncher
+Icon=twintaillauncher
+Name=TwintailLauncher
+GenericName=Gacha game launcher
+Keywords=Anime game launcher;
+Terminal=false
+Type=Application

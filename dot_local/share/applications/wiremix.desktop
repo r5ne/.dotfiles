@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Wiremix
+GenericName=Audio Mixer
+Comment=Configure audio device settings
+Exec=tui-launch -a wiremix wiremix
+Terminal=false
+Type=Application
+Keywords=Pipewire TUI;Sound manager;Audio device manager;Volume manager;Volume configuration;Wireplumber TUI;Application volume mixer;Sound mixer;
+Categories=System;Settings;ConsoleOnly
+StartupNotify=false

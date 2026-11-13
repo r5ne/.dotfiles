@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Genshin Impact
+Keywords=GI;Adventure;RPG;Role-playing game;Multiplayer;Co-op;Story;
+Categories=Game;AdventureGame;RolePlaying;
+Comment=RONOVAAAAAAAAAAAAA
+Exec=twintaillauncher --install=01a164bf-5aff-7150-8ef2-09ceb6f77170
+Icon=twintaillauncher
+Terminal=false
+Type=Application

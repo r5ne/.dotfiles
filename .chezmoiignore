@@ -28,4 +28,8 @@ setup-deps/
 .local/share/applications/*Terraria*
 .local/share/applications/*tModLoader*
 .local/share/applications/*osu*
+.local/share/applications/*GenshinImpact*
+.local/share/applications/*PrismLauncher*
+.local/share/applications/*twintaillauncher*
+.local/share/applications/*vencordinstaller*
 {{- end }}
