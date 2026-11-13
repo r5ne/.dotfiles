@@ -26,6 +26,7 @@ window-rule {
 }
 
 // Floating window overrides
+// Browser PiP modes
 window-rule {
     match app-id="firefox" title="&Picture-in-Picture$"
     match app-id="floorp" title="^Picture-in-Picture$"
@@ -33,8 +34,10 @@ window-rule {
     match app-id="qutebrowser" title="^Picture-in-Picture$"
     open-floating true
 }
+// Desktop utilities
 window-rule {
     match app-id="app-launcher"
+    match app-id="termfilechooser"
     open-floating true
 }
 
