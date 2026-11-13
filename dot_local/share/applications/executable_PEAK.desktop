@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=PEAK
+Keywords=Roguelike;Climbing;Multiplayer;Coop;
+Comment=The fog is coming
+Exec=steam steam://rungameid/3527290
+Icon=steam_icon_3527290
+Terminal=false
+Type=Application
+Categories=Game;
