@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Subnautica
+Keywords=Survival;Horror;Adventure;
+Comment=Descend into the depths of an alien underwater world filled with wonder and peril.
+Exec=steam steam://rungameid/264710
+Icon=steam_icon_264710
+Terminal=false
+Type=Application
+Categories=Game;AdventureGame;

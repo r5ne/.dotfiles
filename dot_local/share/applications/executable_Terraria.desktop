@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Terraria
+Keywords=Sandbox;Survival;
+Comment=Dig, fight, explore, build! 
+Exec=steam steam://rungameid/105600
+Icon=steam_icon_105600
+Terminal=false
+Type=Application
+Categories=Game;AdventureGame;RolePlaying;

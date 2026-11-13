@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Mindustry
+Keywords=Automation;TD;Tower defense;RTS;Real time strategy;Multiplayer;Co-op;
+Comment=An open-ended factory management game with RTS and tower defense elements.
+Exec=steam steam://rungameid/1127400
+Icon=steam_icon_1127400
+Terminal=false
+Type=Application
+Categories=Game;StrategyGame;

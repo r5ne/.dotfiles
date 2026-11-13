@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Half-Life
+Keywords=HL1;FPS;First-person shooter;Multiplayer;Co-op;
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/70
+Icon=steam_icon_70
+Terminal=false
+Type=Application
+Categories=Game;Shooter;ActionGame;

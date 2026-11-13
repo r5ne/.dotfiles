@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Hollow Knight: Silksong
+Keywords=HK: Silksong;Metroidvania;
+Comment=Explore, fight and survive as you ascend to the peak of a land ruled by silk and song.
+Exec=steam steam://rungameid/1030300
+Icon=steam_icon_1030300
+Terminal=false
+Type=Application
+Categories=Game;AdventureGame;

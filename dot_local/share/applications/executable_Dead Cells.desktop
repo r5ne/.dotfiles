@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Dead Cells
+Keywords=DC;Roguelike;
+Comment=Kill, die, learn, repeat.
+Exec=steam steam://rungameid/588650
+Icon=steam_icon_588650
+Terminal=false
+Type=Application
+Categories=Game;ActionGame;

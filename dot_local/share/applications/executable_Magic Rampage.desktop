@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Magic Rampage
+Keywords=MR;RPG;Role-playing game;Platformer;Multiplayer;
+Comment=Play this game on Steam
+Exec=steam steam://rungameid/704920
+Icon=steam_icon_704920
+Terminal=false
+Type=Application
+Categories=Game;ActionGame;RolePlaying;
