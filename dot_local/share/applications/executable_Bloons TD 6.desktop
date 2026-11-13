@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=Bloons TD 6
+Keywords=Bloons;TD;Tower defense;
+Comment=Are you kidding me? Nothing gets past my bow!
+Exec=steam steam://rungameid/960090
+Icon=steam_icon_960090
+Terminal=false
+Type=Application
+Categories=Game;StrategyGame;
