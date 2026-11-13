@@ -1,3 +1,5 @@
+setup-deps/
+
 {{- if ne .host "pc" }}
 .config/waywall/
 .config/udiskie/

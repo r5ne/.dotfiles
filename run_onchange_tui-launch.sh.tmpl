@@ -1,0 +1,10 @@
+#!/bin/sh
+# tui-launch.c sha256: {{ include "setup-deps/tui-launch.c" | sha256sum }}
+
+set -eu
+
+SRC="{{ joinPath .chezmoi.sourceDir "setup-deps/tui-launch.c" }}"
+OUT="${HOME}/.local/bin/tui-launch"
+
+mkdir -p "${HOME}/.local/bin"
+gcc -O2 -march=native -Wall -Wextra -Wpedantic "${SRC}" -o "${OUT}"
