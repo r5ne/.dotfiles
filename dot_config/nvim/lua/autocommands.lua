@@ -2,6 +2,7 @@ local languages = require('globals').LANGUAGES
 
 local active_filetypes = vim.tbl_keys(languages)
 
+-- Set up all formatters to trigger on <leader>f
 vim.api.nvim_create_autocmd("FileType", {
   pattern = active_filetypes,
   callback = function(args)
@@ -25,5 +26,47 @@ vim.api.nvim_create_autocmd("FileType", {
         vim.fn.winrestview(view)
       end, { buffer = args.buf, desc = "Format File" })
 end
+  end,
+})
+
+-- Set up .desktop LSP via desktop-file-validate CLI tool
+local namespace = vim.api.nvim_create_namespace("desktop_validator")
+vim.api.nvim_create_autocmd("BufWritePost", {
+  pattern = "*.desktop",
+  callback = function(args)
+    local file = vim.fn.expand("%:p")
+    
+    vim.system({"desktop-file-validate", file}, { text = true }, function(obj)
+      local diagnostics = {}
+      if obj.code ~= 0 then
+        local output = obj.stdout .. (obj.stderr or "")
+        for line in output:gmatch("[^\r\n]+") do
+          local lnum, severity_str, msg = line:match(":(%d+):%s*(%a+):%s*(.*)")
+          if not lnum then
+            severity_str, msg = line:match(":%s*(%a+):%s*(.*)")
+            lnum = 1
+          end
+          if severity_str and msg then
+            local severity = severity_str == "error" and vim.diagnostic.severity.ERROR or vim.diagnostic.severity.WARN
+            table.insert(diagnostics, {
+              lnum = tonumber(lnum) - 1,
+              col = 0,
+              severity = severity,
+              message = msg,
+              source = "desktop-file-validate"
+            })
+          end
+        end
+      end
+
+      vim.schedule(function()
+        if not vim.api.nvim_buf_is_valid(args.buf) then return end
+        if obj.code == 0 then
+          vim.diagnostic.reset(namespace, args.buf)
+        else
+          vim.diagnostic.set(namespace, args.buf, diagnostics)
+        end
+      end)
+    end)
   end,
 })
