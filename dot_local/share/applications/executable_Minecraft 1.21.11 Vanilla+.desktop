@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Keywords=MC 1.21.11 Vanilla+;Sandbox;Survival;
+Categories=Game;ActionGame;AdventureGame;Simulation
+Exec="/usr/bin/prismlauncher" '--launch' 'afa5922f2f724293a0fc90b5cd87f9c3'
+Name=Minecraft 1.21.11 Vanilla+
+Icon=/mnt/kingston/linux-storage/games/standalone/prismlauncher/instances/1.21.11-vanilla+/icon.png

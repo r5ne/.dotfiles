@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Keywords=MC 1.21.11 Creative;Sandbox;
+Categories=Game;AdventureGame;Simulation;
+Exec="/usr/bin/prismlauncher" '--launch' '896aa8508a6e449f885e688f6220e9f6'
+Name=Minecraft 1.21.11 Creative
+Icon=/mnt/kingston/linux-storage/games/standalone/prismlauncher/instances/1.21.11-creative/icon.png

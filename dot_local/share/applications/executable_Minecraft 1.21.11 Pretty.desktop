@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Keywords=MC 1.21.11 Pretty;Minecraft 1.21.11 Immersive;MC 1.21.11 Immersive;Minecraft 1.21.11 Visuals;MC 1.21.11 Visuals;Sandbox;Survival;
+Categories=Game;ActionGame;AdventureGame;Simulation
+Exec="/usr/bin/prismlauncher" '--launch' 'ca388e5f716845c6915adc7ea5185c50'
+Name=Minecraft 1.21.11 Pretty
+Icon=/mnt/kingston/linux-storage/games/standalone/prismlauncher/instances/1.21.11-pretty-base/icon.png

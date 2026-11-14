@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Keywords=MC 1.16.1 Speedrunning;MCSR 1.16.1;Minecraft Speedrunning Ranked 1.16.1;Sandbox;Survival;
+Categories=Game;ActionGame;AdventureGame;Simulation
+Exec="/usr/bin/prismlauncher" '--launch' '73620411a165400385d5606bfe7ccdee'
+Name=Minecraft 1.16.1 Speedrunning
+Icon=/mnt/kingston/linux-storage/games/standalone/prismlauncher/instances/1.16.1-speedrun/icon.png
