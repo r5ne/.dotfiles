@@ -46,7 +46,7 @@ prepend_rules = [
     { url = "*.xcf", use = "edit-image" },
     { url = "*.ase*", use = "edit-image-pixel" },
     { url = "*.html", use = [ "text", "browser" ] },
-    { url = "*.pdf", use = [ "ebook-reader", "browser" ] },
+    { url = "*.pdf", use = [ "browser", "ebook-reader" ] },
 
     # mime types
     { mime = "image/*", use = [ "view-image", "edit-image", "edit-image-pixel" ] },
