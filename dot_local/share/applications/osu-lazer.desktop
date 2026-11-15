@@ -5,5 +5,5 @@ Keywords=Rhythm;
 MimeType=application/x-osu-skin-archive;application/x-osu-replay;application/x-osu-beatmap-archive;
 Icon=osu-lazer
 Comment=Open source free-to-win rhythm game
-Exec=/usr/bin/osu-lazer
+Exec=/usr/bin/osu-lazer %U
 Categories=Game;
