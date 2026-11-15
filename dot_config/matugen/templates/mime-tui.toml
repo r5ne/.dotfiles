@@ -1,0 +1,14 @@
+# Matugen template for mime-tui
+
+[theme]
+border = "{{colors.tertiary.default.hex}}"
+focus = "{{colors.primary.default.hex}}"
+
+unfocused = "{{colors.on_surface_variant.default.hex}}"
+secondary = "{{colors.on_surface_variant.default.hex}}"
+
+highlight = "{{colors.primary.default.hex}}"
+selection_fg = "{{colors.on_primary.default.hex}}"
+
+border_style = "rounded"
+cursor_shape = "block"
