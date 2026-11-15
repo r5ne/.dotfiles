@@ -2,10 +2,12 @@
 application/epub+zip=com.github.johnfactotum.Foliate.desktop;
 application/mxf=mpv.desktop;
 application/pdf={{ .browser }}.desktop;
+{{- if eq .host "pc" }}
 application/x-osu-beatmap=osu-lazer.desktop;
 application/x-osu-beatmap-archive=osu-lazer.desktop;
 application/x-osu-replay=osu-lazer.desktop;
 application/x-osu-skin-archive=osu-lazer.desktop;
+{{- end }}
 image/aces=com.interversehq.qView.desktop;
 image/apng=com.interversehq.qView.desktop;
 image/avif=com.interversehq.qView.desktop;
@@ -61,19 +63,23 @@ video/x-msvideo=mpv.desktop;
 video/x-ogm=mpv.desktop;
 video/x-ogm+ogg=mpv.desktop;
 video/x-theora=mpv.desktop;
+{{- if eq .host "pc" }}
 x-scheme-handler/curseforge=org.prismlauncher.PrismLauncher.desktop;
 x-scheme-handler/discord=discord.desktop;
 x-scheme-handler/http={{ .browser }}.desktop;
 x-scheme-handler/https={{ .browser }}.desktop;
 x-scheme-handler/obsidian=obsidian.desktop;
 x-scheme-handler/prismlauncher=org.prismlauncher.PrismLauncher.desktop;
-x-scheme-handler/qute=org.qutebrowser.qutebrowser.desktop;
 x-scheme-handler/steam=steam.desktop;
 x-scheme-handler/steamlink=steam.desktop;
+{{- end }}
+x-scheme-handler/qute=org.qutebrowser.qutebrowser.desktop;
 
 [Added Associations]
 application/json=nvim.desktop;
+{{- if eq .host "pc" }}
 application/x-osu-beatmap=osu-lazer.desktop;
 application/x-osu-storyboard=osu-lazer.desktop;
+{{- end }}
 image/x-icns=com.interversehq.qView.desktop;
 image/x-ico=com.interversehq.qView.desktop;
