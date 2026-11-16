@@ -32,4 +32,7 @@ setup-deps/
 .local/share/applications/*PrismLauncher*
 .local/share/applications/*twintaillauncher*
 .local/share/applications/*vencordinstaller*
+.local/share/applications/*Minecraft*
+.local/share/applications/*Portal*
+.local/share/applications/*Mindustry*
 {{- end }}
