@@ -2,10 +2,12 @@
 # For programming
 java = ["temurin"{{ if eq .host "pc" }}, "temurin-25", "temurin-21"{{ end }}]
 python = "latest"
+scala = "latest"
 
 # Development tools
 superhtml = "latest"
 uv = "latest"
+coursier = "latest"
 
 {{- if eq .host "pc" }}
 
@@ -13,3 +15,6 @@ uv = "latest"
 # Must be specified in the corresponding minecraft instance
 graalvm = "21.3.3.1-java11"
 {{- end }}
+
+[env]
+_.path = ["~/.local/share/coursier/bin"]
