@@ -7,6 +7,8 @@ export XDG_CACHE_HOME="$HOME/.cache"
 export XDG_STATE_HOME="$HOME/.local/state"
 
 # Add local binaries to path
+# Add these before the path so that local binaries
+# override globally installed ones
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$HOME/.local/bin/scripts:$PATH"
 
