@@ -2,13 +2,14 @@ local M = {}
 
 M.LANGUAGES = {
   -- programming languages
-  cpp    = { parser = "cpp", formatter = "clang-format --style=file", lsp = "clangd" },
+  asm    = { parser = "asm" },
   c      = { parser = "c", formatter = "clang-format --style=file", lsp = "clangd" },
+  cpp    = { parser = "cpp", formatter = "clang-format --style=file", lsp = "clangd" },
+  scala  = { parser = "scala", formatter = "scalafmt", lsp = "metals" },
   python = { parser = "python", formatter = "ruff format", lsp = {
       "ruff",
       { name = "basedpyright", settings = { basedpyright = { disableLanguageServices = true } } }
   } },
-  asm    = { parser = "asm" },
 
   -- scripting languages
   lua    = { parser = "lua", formatter = "stylua" },
