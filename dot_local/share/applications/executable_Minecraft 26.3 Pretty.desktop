@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Keywords=MC 26.3 Pretty;Minecraft 26.3 Immersive;MC 26.3 Immersive;Minecraft 26.3 Visuals;MC 26.3 Visuals;Sandbox;Survival;
+Categories=Game;ActionGame;AdventureGame;Simulation
+Exec="/usr/bin/prismlauncher" '--launch' 'b7423915fdb24d1c8b18b01dc3c89534'
+Name=Minecraft 26.3 Pretty
+Icon=/mnt/kingston/linux-storage/games/standalone/prismlauncher/instances/26.3-pretty-base/icon.png

@@ -1,0 +1,7 @@
+[Desktop Entry]
+Type=Application
+Keywords=MC 26.3 Creative;Sandbox;
+Categories=Game;AdventureGame;Simulation
+Exec="/usr/bin/prismlauncher" '--launch' 'bad65aa57fd54a459c8937878e941748'
+Name=Minecraft 26.3 Creative
+Icon=/mnt/kingston/linux-storage/games/standalone/prismlauncher/instances/26.3-creative/icon.png
