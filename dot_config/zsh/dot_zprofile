@@ -29,8 +29,11 @@ export GOPATH="$XDG_DATA_HOME/go"
 export GOBIN="$GOPATH/bin"
 export GOMODCACHE="$XDG_CACHE_HOME/go/mod"
 
-export PYTHONUSERBASE="$XDG_DATA_HOME/python"
+# Fix for pre v3.13.0.a3
+export PYTHONSTARTUP="$XDG_CONFIG_HOME"/python/pythonrc.py 
+# Works for python post v3.13.0.a3
 export PYTHON_HISTORY="$XDG_STATE_HOME/python_history"
+export PYTHONUSERBASE="$XDG_DATA_HOME/python"
 export PYTHONCACHEPREFIX="$XDG_CACHE_HOME/python"
 export RUFF_CACHE_DIR="$XDG_CACHE_HOME/ruff"
 
