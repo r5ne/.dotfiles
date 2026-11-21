@@ -4,7 +4,7 @@ show-item-count: false
 use-si-prefix: true
 
 # Allows going above the folder level at which the scan was started
-browse-parent-dirs: false
+browse-parent-dirs: true
 # Quicker and less-intrusive file deleting
 delete-in-background: false
 delete-in-parallel: false
